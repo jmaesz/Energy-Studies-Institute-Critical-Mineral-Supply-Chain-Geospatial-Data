@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mineral &amp; Transport Atlas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+<style>
+  html, body { height: 100%; margin: 0; font-family: system-ui, sans-serif; }
+  #app { display: flex; height: 100%; }
+  #sidebar {
+    width: 310px; flex-shrink: 0; overflow-y: auto; background: #1c1c1c; color: #eee;
+    padding: 1rem; box-sizing: border-box; border-right: 1px solid #333;
+  }
+  #sidebar h1 { font-size: 1.05rem; margin: 0 0 0.25rem 0; }
+  #sidebar .sub { font-size: 0.75rem; color: #999; margin-bottom: 1rem; }
+  #sidebar h2 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: #999; margin: 1rem 0 0.4rem; }
+  #sidebar section {
+    border-top: 1px solid #2e2e2e; padding-top: 0.8rem; margin-top: 0.8rem;
+  }
+  #sidebar section:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+  #sidebar input[type="text"] {
+    width: 100%; padding: 0.4rem 0.5rem; background: #2a2a2a; border: 1px solid #444;
+    color: #eee; border-radius: 4px; box-sizing: border-box; font-size: 0.85rem;
+  }
+  .chip { display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; padding: 0.15rem 0; cursor: pointer; }
+  .chip input { accent-color: #d4791e; }
+  .chip .swatch { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .chip .swatch.line { border-radius: 2px; height: 4px; }
+  .chip .cnt { margin-left: auto; color: #888; font-variant-numeric: tabular-nums; }
+  .actions { display: flex; gap: 0.4rem; margin-bottom: 0.3rem; }
+  .actions button {
+    background: none; border: 1px solid #444; color: #999; border-radius: 4px;
+    padding: 0.15rem 0.5rem; font-size: 0.68rem; cursor: pointer;
+  }
+  .actions button:hover { color: #eee; border-color: #777; }
+  #map { flex: 1; }
+  .leaflet-popup-content { font-size: 0.85rem; }
+  .leaflet-popup-content b { display: block; margin-bottom: 0.2rem; }
+  .commodity-tag, .facility-tag {
+    display: inline-block; font-size: 0.65rem; text-transform: uppercase; color: #fff;
+    padding: 1px 6px; border-radius: 3px; margin-bottom: 4px;
+  }
+  .mine-icon { background: none; border: none; }
+  .mine-badge {
+    display: flex; align-items: center; justify-content: center;
+    width: 20px; height: 20px; border-radius: 50%; font-size: 12px; line-height: 1;
+    box-shadow: 0 0 0 1.5px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.5);
+  }
+  #sources p { font-size: 0.72rem; color: #888; margin: 0.2rem 0; }
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="sidebar">
+    <h1>Mineral &amp; Transport Atlas</h1>
+    <div class="sub" id="statLine">loading…</div>
+
+    <section>
+      <h2>Mineral Occurrences</h2>
+      <input type="text" id="search" placeholder="Search mine, company, location…">
+      <h2>Commodity</h2>
+      <div class="actions">
+        <button data-group="commodity" data-act="all">All</button>
+        <button data-group="commodity" data-act="none">None</button>
+      </div>
+      <div id="commodityList"></div>
+      <h2>Country</h2>
+      <div class="actions">
+        <button data-group="country" data-act="all">All</button>
+        <button data-group="country" data-act="none">None</button>
+      </div>
+      <div id="countryList"></div>
+    </section>
+
+    <section>
+      <h2>Transport Network</h2>
+      <div id="transportList"></div>
+    </section>
+
+    <section id="sources">
+      <h2>Data Sources</h2>
+      <p>Mining location data: ACMDP, ICMM</p>
+      <p>Land transport data: ASEAN Land Transport Network Map</p>
+    </section>
+  </div>
+  <div id="map"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script>
+const COLORS = {
+  Gold: '#D19A34', Copper: '#BE6A34', Silver: '#9AA0A8', Lead: '#6B7280',
+  Nickel: '#3F8F63', Titanium: '#8E7CC3', Bauxite: '#9C4A2E', Chromium: '#2E86AB',
+  Graphite: '#5A5550', Manganese: '#B23A6E', Tin: '#2E8B6F', Cobalt: '#3457A6',
+  Aluminium: '#7FA8C9', Coal: '#2E2A26', 'Iron Ore': '#8B5A2B', Zinc: '#5C7A89',
+  Alumina: '#B8956A', Lithium: '#7FC8A9', Mercury: '#8FA6B2', Tungsten: '#4A4A6A'
+};
+
+const DEFAULT_OFF = {
+  commodity: new Set(['Gold', 'Silver', 'Lead', 'Titanium']),
+  country: new Set(['Lao PDR', 'Myanmar', 'Brunei']),
+  transport: new Set([
+    'Roads (Asian Highway)', 'Rail (SKRL)', 'Airports', 'Seaports',
+    'Train Stations', 'Dryports / ICD', 'Special Economic Zone / Industrial Park'
+  ])
+};
+
+const map = L.map('map', { worldCopyJump: true }).setView([5, 110], 5);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 18,
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+// ---------- Mineral occurrences ----------
+const cluster = L.markerClusterGroup({ maxClusterRadius: 45 });
+let markers = [];
+let state = { commodity: null, country: null, query: '' };
+
+fetch('points.json').then(r => r.json()).then(points => {
+  const commodityCounts = {}, countryCounts = {};
+  points.forEach(p => {
+    const c = p.commodity || '(unspecified)';
+    const co = p.country || '(unspecified)';
+    commodityCounts[c] = (commodityCounts[c]||0)+1;
+    countryCounts[co] = (countryCounts[co]||0)+1;
+  });
+  state.commodity = new Set(Object.keys(commodityCounts).filter(k => !DEFAULT_OFF.commodity.has(k)));
+  state.country = new Set(Object.keys(countryCounts).filter(k => !DEFAULT_OFF.country.has(k)));
+
+  function buildChips(id, counts, group, showSwatch){
+    const el = document.getElementById(id);
+    const keys = Object.keys(counts).sort((a,b)=>counts[b]-counts[a]);
+    el.innerHTML = keys.map(k => `
+      <label class="chip">
+        <input type="checkbox" ${DEFAULT_OFF[group].has(k) ? '' : 'checked'} data-group="${group}" data-key="${k.replace(/"/g,'&quot;')}">
+        ${showSwatch ? `<span class="swatch" style="background:${COLORS[k]||'#888'}"></span>` : ''}
+        <span>${k}</span><span class="cnt">${counts[k]}</span>
+      </label>`).join('');
+  }
+  buildChips('commodityList', commodityCounts, 'commodity', true);
+  buildChips('countryList', countryCounts, 'country', false);
+
+  markers = points.map(p => {
+    const commodity = p.commodity || '(unspecified)';
+    const country = p.country || '(unspecified)';
+    const color = COLORS[p.commodity] || '#888';
+    const icon = L.divIcon({
+      className: 'mine-icon',
+      html: `<span class="mine-badge" style="background:${color}">⛏️</span>`,
+      iconSize: [20, 20],
+      iconAnchor: [10, 10],
+      popupAnchor: [0, -10]
+    });
+    const marker = L.marker([p.lat, p.lon], { icon });
+    marker.bindPopup(`
+      <span class="commodity-tag" style="background:${color}">${commodity}</span>
+      <b>${p.name || '(unnamed occurrence)'}</b>
+      ${p.company ? p.company + '<br>' : ''}
+      ${p.loc ? p.loc + ', ' : ''}${country}<br>
+      Status: ${p.status || '—'}<br>
+      ${p.lat.toFixed(4)}, ${p.lon.toFixed(4)}
+    `);
+    marker._meta = { commodity, country, search: `${p.name} ${p.company} ${p.loc}`.toLowerCase() };
+    return marker;
+  });
+
+  function applyFilters(){
+    cluster.clearLayers();
+    const q = state.query.trim().toLowerCase();
+    let shown = 0;
+    const visible = markers.filter(m => {
+      const meta = m._meta;
+      const ok = state.commodity.has(meta.commodity) && state.country.has(meta.country) &&
+        (!q || meta.search.includes(q));
+      if (ok) shown++;
+      return ok;
+    });
+    cluster.addLayers(visible);
+    document.getElementById('statLine').textContent = `${shown} / ${points.length} mineral occurrences`;
+  }
+
+  map.addLayer(cluster);
+  applyFilters();
+
+  document.querySelectorAll('#commodityList, #countryList').forEach(list => {
+    list.addEventListener('change', e => {
+      const t = e.target;
+      if (t.matches('input[type="checkbox"]')) {
+        const { group, key } = t.dataset;
+        if (t.checked) state[group].add(key); else state[group].delete(key);
+        applyFilters();
+      }
+    });
+  });
+
+  document.querySelectorAll('.actions[data-group="commodity"], .actions').forEach(() => {});
+  document.querySelectorAll('.actions button').forEach(btn => {
+    if (!['commodity','country'].includes(btn.dataset.group)) return;
+    btn.addEventListener('click', () => {
+      const { group, act } = btn.dataset;
+      const listId = group === 'commodity' ? 'commodityList' : 'countryList';
+      const counts = group === 'commodity' ? commodityCounts : countryCounts;
+      document.querySelectorAll(`#${listId} input[type="checkbox"]`).forEach(b => b.checked = (act === 'all'));
+      state[group] = new Set(act === 'all' ? Object.keys(counts) : []);
+      applyFilters();
+    });
+  });
+
+  document.getElementById('search').addEventListener('input', e => {
+    state.query = e.target.value;
+    applyFilters();
+  });
+}).catch(err => {
+  document.getElementById('statLine').textContent = 'Failed to load points.json: ' + err.message;
+});
+
+// ---------- Transport network ----------
+const FACILITY_META = {
+  'Roads (Asian Highway)':               { kind: 'line', color: '#C0392B' },
+  'Rail (SKRL)':                          { kind: 'line', color: '#9C27B0', dashed: true },
+  'Airports':                              { kind: 'point', color: '#FF5252' },
+  'Seaports':                              { kind: 'point', color: '#0097A7' },
+  'Train Stations':                        { kind: 'point', color: '#9C27B0' },
+  'Dryports / ICD':                        { kind: 'point', color: '#0288D1' },
+  'Special Economic Zone / Industrial Park': { kind: 'point', color: '#F9A825' }
+};
+
+const transportLayers = {}; // name -> L.layerGroup
+Object.keys(FACILITY_META).forEach(k => { transportLayers[k] = L.layerGroup(); });
+
+function buildTransportChips(counts){
+  const el = document.getElementById('transportList');
+  el.innerHTML = Object.keys(FACILITY_META).map(name => {
+    const meta = FACILITY_META[name];
+    const swatch = meta.kind === 'line'
+      ? `<span class="swatch line" style="background:${meta.color}"></span>`
+      : `<span class="swatch" style="background:${meta.color}"></span>`;
+    return `<label class="chip">
+      <input type="checkbox" ${DEFAULT_OFF.transport.has(name) ? '' : 'checked'} data-layer="${name}">
+      ${swatch}
+      <span>${name}</span><span class="cnt">${counts[name]||0}</span>
+    </label>`;
+  }).join('');
+  el.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener('change', () => {
+      const layer = transportLayers[cb.dataset.layer];
+      if (cb.checked) map.addLayer(layer); else map.removeLayer(layer);
+    });
+  });
+}
+
+Promise.all([
+  fetch('roads.json').then(r => r.json()),
+  fetch('transport_points.json').then(r => r.json())
+]).then(([roads, tpoints]) => {
+  const counts = {};
+
+  roads.forEach(r => {
+    const layerName = r.folder === 'SKRL' ? 'Rail (SKRL)' : 'Roads (Asian Highway)';
+    const meta = FACILITY_META[layerName];
+    r.segments.forEach(seg => {
+      const latlngs = seg.map(([lon, lat]) => [lat, lon]);
+      const line = L.polyline(latlngs, {
+        color: r.color || meta.color, weight: meta.dashed ? 3 : 2.5,
+        opacity: 0.85, dashArray: meta.dashed ? '6 5' : null
+      });
+      line.bindPopup(`<b>${r.name}</b>${r.desc ? r.desc : ''}`);
+      transportLayers[layerName].addLayer(line);
+    });
+    counts[layerName] = (counts[layerName]||0) + 1;
+  });
+
+  const facilityToLayer = {
+    'Airports': 'Airports', 'Seaports': 'Seaports',
+    'Train Stations': 'Train Stations', 'Train Station': 'Train Stations',
+    'Dryports': 'Dryports / ICD', 'ICD': 'Dryports / ICD',
+    'Special Economic Zone': 'Special Economic Zone / Industrial Park'
+  };
+
+  const FACILITY_EMOJI = {
+    'Airports': '✈️',
+    'Seaports': '🚢',
+    'Dryports / ICD': '🏜️'
+  };
+
+  tpoints.forEach(p => {
+    const layerName = facilityToLayer[p.facility] || p.facility;
+    const meta = FACILITY_META[layerName];
+    if (!meta) return;
+    const emoji = FACILITY_EMOJI[layerName];
+    const marker = emoji
+      ? L.marker([p.lat, p.lon], { icon: L.divIcon({
+          className: 'mine-icon',
+          html: `<span class="mine-badge" style="background:${meta.color}">${emoji}</span>`,
+          iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10]
+        }) })
+      : L.circleMarker([p.lat, p.lon], {
+          radius: 4.5, color: '#111', weight: 0.6, fillColor: meta.color, fillOpacity: 0.9
+        });
+    marker.bindPopup(`
+      <span class="facility-tag" style="background:${meta.color}">${p.facility}</span>
+      <b>${p.name}</b>
+      ${p.country}<br>
+      ${p.lat.toFixed(4)}, ${p.lon.toFixed(4)}
+    `);
+    transportLayers[layerName].addLayer(marker);
+    counts[layerName] = (counts[layerName]||0) + 1;
+  });
+
+  buildTransportChips(counts);
+  Object.keys(transportLayers).forEach(name => {
+    if (!DEFAULT_OFF.transport.has(name)) map.addLayer(transportLayers[name]);
+  });
+}).catch(err => {
+  console.error('Failed to load transport network:', err);
+});
+</script>
+</body>
+</html>
