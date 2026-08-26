@@ -80,10 +80,20 @@
       <div id="transportList"></div>
     </section>
 
+    <section>
+      <h2>Power Plants (China &amp; ASEAN)</h2>
+      <div class="actions">
+        <button data-group="power" data-act="all">All</button>
+        <button data-group="power" data-act="none">None</button>
+      </div>
+      <div id="powerList"></div>
+    </section>
+
     <section id="sources">
       <h2>Data Sources</h2>
       <p>Mining location data: ACMDP, ICMM</p>
       <p>Land transport data: ASEAN Land Transport Network Map</p>
+      <p>Power plant data: WRI Global Power Plant Database</p>
     </section>
   </div>
   <div id="map"></div>
@@ -106,7 +116,8 @@ const DEFAULT_OFF = {
   transport: new Set([
     'Roads (Asian Highway)', 'Rail (SKRL)', 'Airports', 'Seaports',
     'Train Stations', 'Dryports / ICD', 'Special Economic Zone / Industrial Park'
-  ])
+  ]),
+  power: new Set(['Gas', 'Biomass', 'Solar', 'Hydro', 'Oil', 'Waste', 'Coal', 'Wind', 'Nuclear', 'Geothermal'])
 };
 
 const map = L.map('map', { worldCopyJump: true }).setView([5, 110], 5);
@@ -197,7 +208,6 @@ fetch('points.json').then(r => r.json()).then(points => {
     });
   });
 
-  document.querySelectorAll('.actions[data-group="commodity"], .actions').forEach(() => {});
   document.querySelectorAll('.actions button').forEach(btn => {
     if (!['commodity','country'].includes(btn.dataset.group)) return;
     btn.addEventListener('click', () => {
@@ -317,6 +327,90 @@ Promise.all([
   });
 }).catch(err => {
   console.error('Failed to load transport network:', err);
+});
+
+// ---------- Power plants (China & ASEAN) ----------
+const POWER_COLORS = {
+  Coal: '#3a3a3a', Gas: '#c9a227', Oil: '#7a4b2a', Hydro: '#1f77b4',
+  Solar: '#f1c40f', Wind: '#2ecc71', Nuclear: '#8e44ad', Biomass: '#27ae60',
+  Waste: '#95a5a6', Geothermal: '#e67e22'
+};
+
+const POWER_EMOJI = {
+  Coal: '⚫', Gas: '🔥', Oil: '🛢️', Hydro: '💧', Solar: '☀️',
+  Wind: '💨', Nuclear: '☢️', Biomass: '🌱', Waste: '🗑️', Geothermal: '♨️'
+};
+
+const powerLayer = L.layerGroup();
+let powerMarkers = [];
+state.power = null;
+
+function buildPowerChips(counts){
+  const el = document.getElementById('powerList');
+  const keys = Object.keys(counts).sort((a,b)=>counts[b]-counts[a]);
+  el.innerHTML = keys.map(k => `
+    <label class="chip">
+      <input type="checkbox" ${DEFAULT_OFF.power.has(k) ? '' : 'checked'} data-group="power" data-key="${k}">
+      <span class="swatch" style="background:${POWER_COLORS[k]||'#888'}"></span>
+      <span>${POWER_EMOJI[k]||''} ${k}</span><span class="cnt">${counts[k]}</span>
+    </label>`).join('');
+  el.addEventListener('change', e => {
+    const t = e.target;
+    if (t.matches('input[type="checkbox"]')) {
+      const { key } = t.dataset;
+      if (t.checked) state.power.add(key); else state.power.delete(key);
+      applyPowerFilters();
+    }
+  });
+}
+
+function applyPowerFilters(){
+  powerLayer.clearLayers();
+  powerMarkers.forEach(m => {
+    if (state.power.has(m._meta.fuel)) powerLayer.addLayer(m);
+  });
+}
+
+fetch('power_plants.json').then(r => r.json()).then(plants => {
+  const counts = {};
+  plants.forEach(p => { counts[p.fuel] = (counts[p.fuel]||0) + 1; });
+  state.power = new Set(Object.keys(counts).filter(k => !DEFAULT_OFF.power.has(k)));
+  buildPowerChips(counts);
+
+  powerMarkers = plants.map(p => {
+    const color = POWER_COLORS[p.fuel] || '#888';
+    const emoji = POWER_EMOJI[p.fuel] || '⚡';
+    const marker = L.marker([p.lat, p.lon], { icon: L.divIcon({
+      className: 'mine-icon',
+      html: `<span class="mine-badge" style="background:${color}">${emoji}</span>`,
+      iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10]
+    }) });
+    marker.bindPopup(`
+      <span class="facility-tag" style="background:${color}">${p.fuel}</span>
+      <b>${p.name}</b>
+      ${p.owner ? p.owner + '<br>' : ''}
+      ${p.country}<br>
+      ${p.capacity_mw ? p.capacity_mw.toLocaleString() + ' MW<br>' : ''}
+      ${p.lat.toFixed(4)}, ${p.lon.toFixed(4)}
+    `);
+    marker._meta = { fuel: p.fuel };
+    return marker;
+  });
+
+  applyPowerFilters();
+  map.addLayer(powerLayer);
+
+  document.querySelectorAll('.actions button').forEach(btn => {
+    if (btn.dataset.group !== 'power') return;
+    btn.addEventListener('click', () => {
+      const act = btn.dataset.act;
+      document.querySelectorAll('#powerList input[type="checkbox"]').forEach(b => b.checked = (act === 'all'));
+      state.power = new Set(act === 'all' ? Object.keys(counts) : []);
+      applyPowerFilters();
+    });
+  });
+}).catch(err => {
+  console.error('Failed to load power plants:', err);
 });
 </script>
 </body>
