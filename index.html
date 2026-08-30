@@ -80,6 +80,15 @@
       <div id="transportList"></div>
     </section>
 
+    <section id="chinaTransportSection" style="display:none">
+      <h2>China Transport Network (OSM)</h2>
+      <div id="motorwayList"></div>
+      <div id="officialRailList"></div>
+      <div id="chinaAirportList"></div>
+      <div id="chinaSeaportList"></div>
+      <div id="chinaDryportList"></div>
+    </section>
+
     <section>
       <h2>Power Plants (China &amp; ASEAN)</h2>
       <div class="actions">
@@ -94,6 +103,9 @@
       <p>Mining location data: ACMDP, ICMM</p>
       <p>Land transport data: ASEAN Land Transport Network Map</p>
       <p>Power plant data: WRI Global Power Plant Database</p>
+      <p>China motorway data: HOTOSM export of OpenStreetMap</p>
+      <p>China railway data: OpenStreetMap official China Railway route relations, filtered to exclude HSR/intercity-only lines (ref 3xxx series)</p>
+      <p>China airports/seaports/dry ports: OpenStreetMap via Overpass API, military airports excluded</p>
     </section>
   </div>
   <div id="map"></div>
@@ -278,7 +290,7 @@ Promise.all([
         color: r.color || meta.color, weight: meta.dashed ? 3 : 2.5,
         opacity: 0.85, dashArray: meta.dashed ? '6 5' : null
       });
-      line.bindPopup(`<b>${r.name}</b>${r.desc ? r.desc : ''}`);
+      line.bindPopup(`<b>${r.name}</b>${r.desc ? '<br>' + r.desc : ''}`);
       transportLayers[layerName].addLayer(line);
     });
     counts[layerName] = (counts[layerName]||0) + 1;
@@ -327,6 +339,129 @@ Promise.all([
   });
 }).catch(err => {
   console.error('Failed to load transport network:', err);
+});
+
+// ---------- China motorways (OSM, HOTOSM export) ----------
+// Temporarily disabled in the UI -- flip to true to bring the section back.
+// Data files (china_motorways.json / china_freight_rail.json) are untouched.
+const ENABLE_CHINA_TRANSPORT = true;
+if (ENABLE_CHINA_TRANSPORT) document.getElementById('chinaTransportSection').style.display = '';
+
+// One layer per named route (multi-part polyline) rather than one per raw OSM way,
+// or the ~96k underlying fragments would be rendered as separate objects.
+
+// SVG hit-testing only registers clicks on the actual rendered stroke, so a thin 3px
+// line is hard to hit precisely. Add an invisible, much wider line underneath to hold
+// the popup/click target while the visible line keeps its normal width.
+function addClickableLine(layerGroup, latlngSets, visibleOpts, popupHtml) {
+  const hitLine = L.polyline(latlngSets, { color: visibleOpts.color, weight: 16, opacity: 0 });
+  hitLine.bindPopup(popupHtml);
+  layerGroup.addLayer(hitLine);
+  const visibleLine = L.polyline(latlngSets, { ...visibleOpts, interactive: false });
+  layerGroup.addLayer(visibleLine);
+}
+
+if (ENABLE_CHINA_TRANSPORT) fetch('china_motorways.json').then(r => r.json()).then(routes => {
+  // only the named/coded G-routes -- unnamed ramps/local fragments are dropped entirely
+  const motorwayLayer = L.layerGroup();
+  let codedCount = 0;
+
+  routes.forEach(r => {
+    if (!r.code) return;
+    const latlngSets = r.segments.map(seg => seg.map(([lon, lat]) => [lat, lon]));
+    addClickableLine(
+      motorwayLayer, latlngSets, { color: r.color, weight: 3, opacity: 0.8 },
+      `<span class="facility-tag" style="background:${r.color}">${r.code}</span><b>${r.name}</b>`
+    );
+    codedCount++;
+  });
+
+  const el = document.getElementById('motorwayList');
+  el.innerHTML = `
+    <label class="chip">
+      <input type="checkbox" id="motorwayToggle">
+      <span class="swatch line" style="background:#C0392B"></span>
+      <span>Motorways (G1&ndash;G85)</span><span class="cnt">${codedCount}</span>
+    </label>`;
+  document.getElementById('motorwayToggle').addEventListener('change', e => {
+    if (e.target.checked) map.addLayer(motorwayLayer); else map.removeLayer(motorwayLayer);
+  });
+}).catch(err => {
+  console.error('Failed to load China motorways:', err);
+});
+
+// ---------- China railways, official China Railway network (OSM route relations) ----------
+if (ENABLE_CHINA_TRANSPORT) fetch('china_railways_official.json').then(r => r.json()).then(lines => {
+  const officialRailLayer = L.layerGroup();
+
+  const RAIL_COLOR = '#1565C0';
+  lines.forEach(r => {
+    const latlngSets = r.segments.map(seg => seg.map(([lon, lat]) => [lat, lon]));
+    addClickableLine(
+      officialRailLayer, latlngSets, { color: RAIL_COLOR, weight: 3, opacity: 0.85, dashArray: '6 5' },
+      `${r.code ? `<span class="facility-tag" style="background:${RAIL_COLOR}">${r.code}</span>` : ''}<b>${r.name}</b>${r.from && r.to ? `<br>${r.from} &rarr; ${r.to}` : ''}`
+    );
+  });
+
+  const el = document.getElementById('officialRailList');
+  el.innerHTML = `
+    <label class="chip">
+      <input type="checkbox" id="officialRailToggle">
+      <span class="swatch line" style="background:#1565C0"></span>
+      <span>China Railway lines (freight &amp; mixed)</span><span class="cnt">${lines.length}</span>
+    </label>`;
+  document.getElementById('officialRailToggle').addEventListener('change', e => {
+    if (e.target.checked) map.addLayer(officialRailLayer); else map.removeLayer(officialRailLayer);
+  });
+}).catch(err => {
+  console.error('Failed to load official China railways:', err);
+});
+
+// ---------- China airports / seaports / dry ports (OSM) ----------
+const CHINA_FACILITY_META = {
+  'Airport': { color: '#FF5252', emoji: '✈️', listId: 'chinaAirportList', label: 'Airports (commercial, IATA-coded)' },
+  'Seaport': { color: '#0097A7', emoji: '🚢', listId: 'chinaSeaportList', label: 'Seaports' },
+  'Dry Port / ICD': { color: '#0288D1', emoji: '🏜️', listId: 'chinaDryportList', label: 'Dry Ports / ICD' }
+};
+
+if (ENABLE_CHINA_TRANSPORT) fetch('china_transport_points.json').then(r => r.json()).then(points => {
+  const layers = {};
+  const counts = {};
+  Object.keys(CHINA_FACILITY_META).forEach(k => { layers[k] = L.layerGroup(); counts[k] = 0; });
+
+  points.forEach(p => {
+    const meta = CHINA_FACILITY_META[p.facility];
+    if (!meta) return;
+    const marker = L.marker([p.lat, p.lon], { icon: L.divIcon({
+      className: 'mine-icon',
+      html: `<span class="mine-badge" style="background:${meta.color}">${meta.emoji}</span>`,
+      iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10]
+    }) });
+    marker.bindPopup(`
+      <span class="facility-tag" style="background:${meta.color}">${p.facility}</span>
+      <b>${p.name}</b>
+      ${p.name_en ? p.name_en + '<br>' : ''}
+      ${p.iata ? 'IATA: ' + p.iata + '<br>' : ''}
+      ${p.lat.toFixed(4)}, ${p.lon.toFixed(4)}
+    `);
+    layers[p.facility].addLayer(marker);
+    counts[p.facility]++;
+  });
+
+  Object.entries(CHINA_FACILITY_META).forEach(([key, meta]) => {
+    const el = document.getElementById(meta.listId);
+    el.innerHTML = `
+      <label class="chip">
+        <input type="checkbox" id="chinaFacility_${key.replace(/[^a-zA-Z]/g,'')}">
+        <span class="swatch" style="background:${meta.color}"></span>
+        <span>${meta.label}</span><span class="cnt">${counts[key]}</span>
+      </label>`;
+    document.getElementById(`chinaFacility_${key.replace(/[^a-zA-Z]/g,'')}`).addEventListener('change', e => {
+      if (e.target.checked) map.addLayer(layers[key]); else map.removeLayer(layers[key]);
+    });
+  });
+}).catch(err => {
+  console.error('Failed to load China airports/seaports/dryports:', err);
 });
 
 // ---------- Power plants (China & ASEAN) ----------

@@ -1,0 +1,677 @@
+type,name,name_en,iata,lat,lon,osm_id
+Airport,甘孜格萨尔机场,Garzê Gesar Airport,GZG,31.7557545,99.5544048,node/7117203123
+Airport,朔州滋润机场,Shuozhou Zirun Airport,SZH,39.2725765,112.6887791,node/11411964046
+Airport,长春龙嘉国际机场,Changchun Longjia International Airport,CGQ,43.9965172,125.6854512,way/41130394
+Airport,北海福成机场,Beihai Fucheng Airport,BHY,21.5393624,109.2933913,way/84527473
+Airport,常德桃花源机场,Changde Taohuayuan Airport,CGD,28.9187886,111.63861,way/88313850
+Airport,三亚凤凰国际机场,Sanya Phoenix International Airport,SYX,18.3053383,109.414719,way/92742740
+Airport,大连周水子国际机场,Dalian Zhoushuizi International Airport,DLC,38.9641247,121.5379963,way/93166761
+Airport,昌都邦达机场,Bangda Airport,BPX,30.5523734,97.1096038,way/101968188
+Airport,喀什徕宁国际机场 قەشقەر لەينىڭ خەلقئارا ئايروپورتى,Kashgar Airport,KHG,39.5407582,76.0211175,way/102528860
+Airport,和田昆冈机场 خوتەن ئايرودرومى,Hotan Kungang Airport,HTN,37.0236771,79.8634038,way/102544763
+Airport,西双版纳嘎洒机场,Xishuangbanna Gasa Airport,JHG,21.9746685,100.76255,way/102685357
+Airport,普洱思茅机场,Pu'er Simao Airport,SYM,22.7934522,100.9593367,way/102686999
+Airport,重庆江北国际机场,Chongqing Jiangbei International Airport,CKG,29.7266639,106.6561949,way/103282476
+Airport,格尔木机场,Golmud Airport,GOQ,36.4022654,94.7889494,way/103460874
+Airport,潍坊南苑机场,Weifang Nanyuan Airport,WEF,36.6471598,119.1161908,way/107008585
+Airport,威海大水泊国际机场,Weihai Dashuipo International Airport,WEH,37.1864149,122.2309891,way/107012117
+Airport,天津滨海国际机场,Tianjin Binhai International Airport,TSN,39.1273446,117.3541809,way/107015361
+Airport,揭阳潮汕国际机场,Jieyang Chaoshan International Airport,SWA,23.553393,116.5045614,way/116813693
+Airport,信阳明港机场,Xinyang Minggang Airport,XAI,32.5410246,114.0791809,way/119264393
+Airport,鄂尔多斯伊金霍洛机场,Ordos Ejin Horo Airport,DSN,39.4931555,109.860416,way/136205428
+Airport,永州零陵机场,Yongzhou Lingling Airport,LLF,26.3389849,111.6104159,way/140160895
+Airport,德宏芒市国际机场,Dehong Mangshi International Airport,LUM,24.399817,98.5311306,way/141056295
+Airport,临沧机场,Lincang Airport,LNJ,23.7385139,100.0239046,way/141119572
+Airport,大理凤仪机场,Dali Airport,DLU,25.649768,100.3198055,way/142382433
+Airport,攀枝花保安营机场,Panzhihua Bao'an'ying Airport,PZI,26.5395751,101.798273,way/142447409
+Airport,保山云瑞机场,Baoshan Yunduan Airport,BSD,25.0518801,99.16588,way/142693951
+Airport,安顺黄果树机场,Anshun Huangguoshu Airport,AVA,26.2607945,105.8732277,way/143090444
+Airport,长治王村机场,Changzhi Wangcun Airport,CIH,36.2470983,113.1257385,way/144287071
+Airport,延吉朝阳川国际机场 연길조양천국제공항,Yanji Chaoyangchuan International Airport,YNJ,42.8828195,129.4513628,way/145680588
+Airport,通辽机场,Tongliao Airport,TGO,43.5529802,122.1981905,way/146745321
+Airport,牡丹江海浪机场,Mudanjiang Hailang International Airport,MDG,44.5256453,129.5692026,way/147187455
+Airport,柳州白莲机场,Liuzhou Bailian Airport,LZH,24.2076182,109.3939417,way/148333497
+Airport,南昌昌北国际机场,Nanchang Changbei International Airport,KHN,28.8618452,115.9071277,way/151462512
+Airport,义乌机场,Yiwu Airport,YIW,29.3421485,120.0308765,way/151683394
+Airport,衢州机场,Quzhou Airport,JUZ,28.9658468,118.8964202,way/152353839
+Airport,盐城南洋国际机场,Yancheng Nanyang International Airport,YNZ,33.4284218,120.2052312,way/153970106
+Airport,临沂启阳国际机场,,LYI,35.0530397,118.4092295,way/154899286
+Airport,西宁曹家堡国际机场,Xining Caojiapu International Airport,XNN,36.5285497,102.0392638,way/155016316
+Airport,景德镇罗家机场,Jingdezhen Luojia Airport,JDZ,29.3396961,117.1762862,way/155145277
+Airport,韶关丹霞机场,Shaoguan Danxia Airport,HSC,24.9756516,113.4219612,way/156072191
+Airport,呼和浩特白塔国际机场,Hohhot Baita International Airport,HET,40.8503427,111.8223417,way/157544077
+Airport,广元盘龙机场,Guangyuan Panlong Airport,GYS,32.3907395,105.6945025,way/158052349
+Airport,呼伦贝尔/海拉尔机场,Hulunbuir Hailar Airport,HLD,49.2078987,119.829077,way/160316064
+Airport,大兴安岭鄂伦春机场,Daxing'anling Oroqen Airport,JGD,50.3718571,124.1159023,way/160567231
+Airport,嫩江墨尔根通用机场,Nenjiang Murgan General Airport,NJJ,49.2364865,125.3356206,way/160704607
+Airport,乌兰浩特机场,Ulanhot Yileleeteuk Airport,HLH,46.1992946,122.0017296,way/161084245
+Airport,迪庆香格里拉机场,Diqing Shangri-La Airport,DIG,27.7920107,99.6782239,way/163714636
+Airport,丽江三义国际机场,Lijiang Sanyi International Airport,LJG,26.6747606,100.2438323,way/163787957
+Airport,万州五桥机场,Wanzhou Wuqiao Airport,WXN,30.8013304,108.4349081,way/164854496
+Airport,梅州梅县机场,Meizhou Meixian Airport,MXZ,24.2628759,116.0976912,way/166595880
+Airport,舟山普陀山国际机场,Zhoushan Putuoshan International Airport,HSN,29.9348249,122.3608832,way/167421680
+Airport,榆林榆阳机场,Yulin Yuyang Airport,UYN,38.3592952,109.5927813,way/167714045
+Airport,伊宁机场 غۇلجا ئايرودرومى,Yining Airport,YIN,43.9560259,81.3305815,way/167862517
+Airport,林芝米林机场,Nyingchi Mainling Airport,LZY,29.3035346,94.3356447,way/174965488
+Airport,拉萨贡嘎国际机场,Lhasa Gonggar Airport,LXA,29.2962742,90.908315,way/175406488
+Airport,昭通机场,Zhaotong Airport,ZAT,27.3275984,103.7560838,way/179970922
+Airport,太原武宿国际机场,Taiyuan Wusu International Airport,TYN,37.7420708,112.6357196,way/179987291
+Airport,洛阳北郊机场,Luoyang Beijiao Airport,LYA,34.7407136,112.3872554,way/182072890
+Airport,南阳姜营机场,Nanyang Airport,NNY,32.9822793,112.617851,way/182114816
+Airport,安阳殷都机场,Anyang Airport,AYN,36.1321244,114.3408812,way/182124411
+Airport,合肥新桥国际机场,Hefei Xinqiao International Airport,HFE,31.9885603,116.9736202,way/182657362
+Airport,克拉玛依/古海机场,Karamay Airport,KRY,45.4665084,84.9529463,way/183830530
+Airport,新源那拉提机场,Xinyuan Nalati Airport,NLT,43.4296384,83.3792028,way/183939088
+Airport,库车龟兹机场 كۇچار ئايرودرومى,Kuqa Qiuci Airport,KCA,41.679189,82.8716747,way/183939727
+Airport,布尔津喀纳斯机场 بۋىرشىن قاناس اۋەجايى,Burqin Kanas Airport,KJI,48.2219336,86.9959018,way/183940000
+Airport,淮安涟水国际机场,Lianshui International Airport,HIA,33.7918832,119.1259037,way/183940274
+Airport,玉树巴塘机场,Yushu Batang Airport,YUS,32.836422,97.0360692,way/184551617
+Airport,黄山屯溪国际机场,Huangshan Tunxi International Airport,TXN,29.733299,118.2564637,way/184879660
+Airport,吐鲁番交河机场 تۇرپان يارغول ئايرودورومى,Turpan Jiaohe Airport,TLQ,43.0292143,89.0982735,way/184991908
+Airport,广汉机场,Guanghan Airport,GHN,30.9483689,104.3299382,way/199987432
+Airport,佳木斯松江国际机场,Jiamusi Airport,JMU,46.8431492,130.4600704,way/206785539
+Airport,鄯善机场 پىچان ئايرودرومى,Shanshan Airport,SXJ,42.911696,90.2460283,way/207173568
+Airport,漠河古莲机场,Mohe Gulian Airport,OHE,52.9132534,122.4293567,way/209316707
+Airport,大庆萨尔图机场,Daqing Sartu Airport,DQA,46.7516737,125.1383333,way/219754259
+Airport,金昌金川机场,Jinchang Jinchuan Airport,JIC,38.5410444,102.3506277,way/221348246
+Airport,哈尔滨太平国际机场,Harbin Taiping International Airport,HRB,45.6057108,126.2356573,way/221954233
+Airport,运城盐湖国际机场,Yuncheng Yanhu International Airport Airport,YCU,35.1177639,111.0335525,way/222283805
+Airport,井冈山机场,Jing Gang Shan Airport,JGS,26.8572722,114.7365761,way/222440311
+Airport,汉中城固机场,Hanzhong Chenggu Airport,HZG,33.1318919,107.2021278,way/224648459
+Airport,黑河瑷珲机场,Heihe Aihui Airport,HEK,50.1720641,127.3092113,way/225605836
+Airport,抚远东极机场,Fuyuan Dongji Airport,FYJ,48.1986775,134.3659767,way/225696033
+Airport,南通兴东国际机场,Nantong Xingdong International Airport,NTG,32.0720196,120.9783185,way/225885023
+Airport,武汉天河国际机场,Wuhan Tianhe International Airport,WUH,30.775834,114.2181778,way/233511368
+Airport,扬州泰州机场,Yangzhou Taizhou Airport,YTY,32.5607087,119.7176387,way/235940514
+Airport,甘南夏河机场 ཀན་ལྷོ་བསང་ཆུ་ནམ་གྲུ་ཐང་།,Gannan Xiahe Airport,GXH,34.8189504,102.6217031,way/238867672
+Airport,天水麦积山机场,Tianshui Maijishan Airport,THQ,34.5593479,105.8596666,way/238871411
+Airport,南充高坪机场,Nanchong Gaoping Airport,NAO,30.79715,106.1639115,way/238875512
+Airport,池州九华山机场,Chizhou Jiuhuashan Airport,JUH,30.7415699,117.6865219,way/239347142
+Airport,宜春明月山机场,Yichun Mingyueshan Airport,YIC,27.8022643,114.3059715,way/245855232
+Airport,邢台褡裢机场,Xingtai Dalian Airport,XNT,36.8830209,114.4280552,way/245974130
+Airport,锡林浩特机场,Xilinhot Airport,XIL,43.9138988,115.9608972,way/250357217
+Airport,惠州平潭机场,Huizhou Pingtan Airport,HUZ,23.0517247,114.600516,way/261101493
+Airport,宜宾五粮液机场,Yibin Wuliangye Airport,YBP,28.857556,104.5268209,way/262166594
+Airport,黔江武陵山机场,Qianjiang Wulingshan Airport,JIQ,29.5152017,108.831253,way/285032683
+Airport,石家庄正定国际机场,Shijiazhuang Zhengding International Airport,SJW,38.2803612,114.694973,way/289747094
+Airport,稻城亚丁机场,Daocheng Yading Airport,DCY,29.3168192,100.061019,way/292580461
+Airport,北京首都国际机场,Beijing Capital International Airport,PEK,40.0803339,116.5938286,way/292809708
+Airport,泉州晋江国际机场,Quanzhou Jingjiang International Airport,JJN,24.7968172,118.5888542,way/294692286
+Airport,腾冲驼峰机场,Tengchong Tuofeng Airport,TCZ,24.9413538,98.4854628,way/300626501
+Airport,阿尔山伊尔施机场,Arxan Yi'ershi Airport,YIE,47.3105486,119.9114256,way/303006642
+Airport,大同云冈国际机场,Datong Yungang International Airport,DAT,40.0609299,113.481482,way/309033444
+Airport,阿拉善左旗巴彦浩特机场,Alxa Left Banner Bayanhot Airport,AXF,38.7483201,105.5839908,way/317216080
+Airport,蓬莱沙河口机场,Penglai Shahekou Airport,PNJ,37.8047949,120.8098906,way/317694584
+Airport,徐州观音国际机场,Xuzhou Guanyin Airport,XUZ,34.0585171,117.5564213,way/320472307
+Airport,银川河东国际机场,Yinchuan Hedong International Airport,INC,38.321069,106.3905756,way/320489156
+Airport,杭州萧山国际机场,Hangzhou Xiaoshan International Airport,HGH,30.2366743,120.4292516,way/328062510
+Airport,遵义新舟机场,Zunyi Airport,ZYI,27.8106538,107.2470214,way/333982923
+Airport,六盘水月照机场,Liupanshui Yuezhao Airport,LPF,26.6086482,104.9787721,way/335587295
+Airport,额济纳旗桃来机场,Ejin Taolai Airport,EJN,42.0155397,101.0008278,way/336642879
+Airport,且末玉都机场 چەرچەن يۈدۇ ئايرودرومى,Qiemo Yudu Airport,IQM,38.231459,85.4613925,way/345463145
+Airport,中卫沙坡头机场,Zhongwei Shapotou Airport,ZHY,37.5710349,105.1545352,way/359372444
+Airport,毕节飞雄机场,Bijie Feixiong Airport,BFJ,27.267066,105.4732006,way/375326772
+Airport,日照山字河机场,Rizhao Shanzihe Airport,RIZ,35.4046577,119.3256305,way/377094185
+Airport,东营胜利机场,DongYing Shengli Airport,DOY,37.5024672,118.7873541,way/381710290
+Airport,阿坝红原机场,Aba Hongyuan Airport,AHJ,32.5313258,102.3519656,way/383731554
+Airport,德令哈机场,Delingha Airport,HXD,37.1259361,97.2722653,way/385253083
+Airport,菏泽牡丹机场,Heze Mudan Airport,HZA,35.2127735,115.734742,way/386595752
+Airport,烟台蓬莱国际机场,Yantai Penglai International Airport,YNT,37.6602663,120.9789013,way/395921771
+Airport,博乐阿拉山口机场 بۆرتالا ئالاتاۋ ئايرودرومى,Bole Alashankou Airport,BPL,44.8982045,82.3045006,way/399423884
+Airport,长海机场,Changhai Airport,CNI,39.266747,122.6670706,way/399579004
+Airport,哈尔滨平房机场,Harbin Pingfang Airport,PFA,45.6001516,126.6589877,way/409674726
+Airport,常州奔牛国际机场,Changzhou Benniu International Airport,CZX,31.9185017,119.7751691,way/415288106
+Airport,九寨黄龙机场,Jiuzhai Huanglong Airport,JZH,32.8531772,103.6823988,way/417936918
+Airport,兴义万峰林机场,Xingyi Wanfenglin Airport,ACX,25.0839304,104.96057,way/423012712
+Airport,文山砚山机场,Wenshan Yanshan Airport,WNH,23.5578518,104.3264938,way/423123839
+Airport,通化三源浦机场,Tonghua Sanyuanpu Airport,TNH,42.0477304,125.7347247,way/426801275
+Airport,上海虹桥国际机场,Shanghai Hongqiao International Airport,SHA,31.19765,121.3342185,way/428121878
+Airport,三明沙县机场,Sanming Shaxian Airport,SQJ,26.4253579,117.832308,way/432047733
+Airport,西昌青山机场,Xichang Qingshan Airport,XIC,27.9889535,102.1860219,way/434354746
+Airport,伊春林都机场,Yichun Lindu Airport,LDS,47.7524187,129.0159148,way/437164202
+Airport,承德普宁机场,Chengde Puning Airport,CDE,41.1209967,118.0762895,way/439561388
+Airport,栾城机场,Luancheng Airport,LCT,37.9126299,114.5918626,way/439862899
+Airport,固原六盘山机场,Guyuan Liupanshan Airport,GYU,36.0791562,106.2204334,way/440284672
+Airport,齐齐哈尔三家子机场,Qiqihar Sanjiazi Airport,NDG,47.2309118,123.9149302,way/442417868
+Airport,沈阳桃仙国际机场,Shenyang Taoxian International Airport,SHE,41.6370098,123.486593,way/444273995
+Airport,琼海博鳌国际机场,Qionghai Bo'ao International Airport,BAR,19.1428785,110.4518973,way/451524438
+Airport,珠海金湾机场,Zhuhai Jinwan Airport,ZUH,22.0081474,113.3760323,way/453308613
+Airport,临汾尧都机场,Linfen Yaodu Airport,LFQ,36.1366433,111.6409474,way/454505294
+Airport,重庆梁平机场,Chongqing Liangping Airport,LIA,30.6794616,107.7861666,way/455473647
+Airport,自贡凤鸣通用机场,Zigong Fengming General Airport,ZKL,29.3759175,104.6244999,way/456919128
+Airport,达州河市机场,Dazhou Heshi Airport,DAX,31.1306793,107.4293544,way/463072364
+Airport,铜仁凤凰机场,Tongren Fenghuang Airport,TEN,27.8868874,109.3117226,way/463073291
+Airport,青岛胶东国际机场,Qingdao Jiaodong International Airport,TAO,36.3607113,120.0885101,way/472034670
+Airport,乌兰察布集宁机场,Ulanqab Tsining Airport,UCB,41.1301945,113.1093729,way/475570238
+Airport,芜湖宣州机场,Wuhu Xuanzhou Airport,WHA,31.1037751,118.6657387,way/476752437
+Airport,深圳宝安国际机场,Shenzhen Bao'an International Airport,SZX,22.6404864,113.8000259,way/479727227
+Airport,昆明长水国际机场,Kunming Changshui Airport,KMG,25.1087531,102.9391513,way/481151584
+Airport,陇南成县机场,Longnan Chengxian Airport,LNL,33.78927,105.7881395,way/482237710
+Airport,岳阳三荷机场,Yueyang Sanhe Airport,YYA,29.3115782,113.2804431,way/482793879
+Airport,遵义茅台机场,Zunyi Maotai Airport,WMT,27.9622339,106.4364319,way/484724981
+Airport,泸州云龙机场,Luzhou Yunlong Airport,LZO,29.0279278,105.4687202,way/491137249
+Airport,黔东南/黎平机场,Liping Airport,HZH,26.3224851,109.149764,way/500673509
+Airport,荔波机场,Libo Airport,LLB,25.4496553,107.9611491,way/508428311
+Airport,河池金城江机场,Hechi Jinchengjiang Airport,HCJ,24.8048226,107.7108917,way/508572932
+Airport,乌拉特中旗机场,Urad Middle Banner Airport,WZQ,41.694189,108.3785635,way/509212532
+Airport,凯里黄平机场,Kaili Huangping Airport,KJH,26.9718911,107.9873379,way/509720909
+Airport,恩施许家坪国际机场,Enshi Xujiaping International Airport,ENH,30.3205863,109.4853361,way/518617063
+Airport,神农架机场,Hongping Airport,HPG,31.6261714,110.3402278,way/518678947
+Airport,建三江湿地机场,Jiansanjiang Shidi Airport,JSJ,47.1066242,132.660152,way/521115630
+Airport,白城长安机场,Baicheng Chang'an Airport,DBC,45.5068553,123.0234125,way/522335996
+Airport,上饶三清山机场,Shangrao Sanqingshan Airport,SQD,28.3789002,117.9621912,way/522358502
+Airport,阆中古城机场,Langzhong Gucheng Airport,LZG,31.5027619,106.0356067,way/524532872
+Airport,衡阳南岳机场,Hengyang Nanyue,HNY,26.7217691,112.6180587,way/525117690
+Airport,阿拉善右旗机场,Alxa Right Banner Airport,RHT,39.225289,101.5494324,way/528272996
+Airport,塔城千泉机场 شاۋەشەك اۋەجايى,Tacheng Airport,TCG,46.6714524,83.34439,way/528929311
+Airport,成都天府国际机场,Chengdu Tianfu International Airport,TFU,30.3035491,104.4577774,way/529454532
+Airport,三沙永兴机场,Sansha Yongxing Airport,XYI,16.833801,112.3447135,way/530882481
+Airport,秦皇岛北戴河国际机场,Qinhuangdao Beidaihe International Airport,BPE,39.6648711,119.0641855,way/531477950
+Airport,巴中恩阳机场,Bazhong Enyang Airport,BZX,31.7379758,106.6430262,way/532362213
+Airport,怀化芷江机场,Huaihua Zhijiang Airport,HJJ,27.4464507,109.7070199,way/534501250
+Airport,十堰武当山机场,Shiyan Wudangshan Airport,WDS,32.5926378,110.908223,way/539199354
+Airport,无锡硕放机场,Wuxi Shuofang Airport,WUX,31.4987509,120.4303868,way/548182726
+Airport,赣州黄金机场,Ganzhou Huangjin Airport,KOW,25.8537417,114.7795079,way/587805814
+Airport,新巴尔虎右旗宝格德机场,Xinbarag Youqi Baogede,XRQ,48.5754994,116.9393885,way/591642085
+Airport,宁波栎社国际机场,Ningbo Lishe International Airport,NGB,29.8261804,121.4620568,way/592924334
+Airport,厦门高崎国际机场,Xiamen Gaoqi International Airport,XMN,24.5438468,118.1296792,way/598997467
+Airport,重庆巫山机场,Chongqing Wushan Airport,WSK,31.0678792,109.7074162,way/601077202
+Airport,郴州北湖机场,Chenzhou Beihu Airport,HCZ,25.7536262,112.8453497,way/616265819
+Airport,襄阳刘集机场,Xiangyang Liuji Airport,XFN,32.1513481,112.2895889,way/620906592
+Airport,梧州西江机场,Wuzhou Xijiang Airport,WUZ,23.4032666,111.0987339,way/631207886
+Airport,鸡西兴凯湖机场,Jixi Xingkaihu Airport,JXA,45.295085,131.1908514,way/631423435
+Airport,若羌楼兰机场 چاقىلىق كروران ئايرودرومى,Ruoqiang Loulan Airport,RQA,38.9737892,88.0074485,way/637854017
+Airport,海西茫崖机场,Haixi Mangya Airport,HTT,38.1983543,90.8410669,way/637881615
+Airport,吕梁大武机场,Lüliang Airport,LLV,37.6839824,111.1423985,way/646168239
+Airport,太原尧城机场,Taiyuan Yaocheng Airport,TYC,37.5036081,112.4230889,way/646168723
+Airport,营口兰旗机场,Yingkou Lanqi Airport,YKH,40.5441957,122.3590942,way/652953007
+Airport,丹东浪头机场,Dandong Langtou Airport,DDG,40.026874,124.2813329,way/654464171
+Airport,果洛玛沁机场,Golog Maqin Airport,GMQ,34.418674,100.3005892,way/664030643
+Airport,锦州湾机场,Jinzhou Airport,JNZ,40.9361514,121.2771269,way/677342458
+Airport,宁蒗泸沽湖机场,Ninglang Luguhu Airport,NLH,27.5406092,100.7588788,way/689456900
+Airport,富蕴可可托海机场 كوكتوعاي اۋەجايى,Fuyun Airport,FYN,46.8038693,89.5133372,way/692798794
+Airport,镇江大路通用机场,Zhenjiang Dalu Airport,AZJ,32.2349931,119.7180844,way/700384446
+Airport,济宁大安机场,Jining Da´an Airport,JNG,35.645818,116.743396,way/706664294
+Airport,延安南泥湾机场,Yan'an Nanniwan Airport,ENY,36.4798337,109.4648215,way/712010433
+Airport,鞍山腾鳌机场,Anshan Teng'ao Airport,AOG,41.1056401,122.8551316,way/720572272
+Airport,沧源佤山机场,Cangyuan Washan Airport,CWJ,23.2754683,99.3734203,way/733941101
+Airport,石河子花园机场,Shihezi Huayuan Airport,SHF,44.2434233,85.8909766,way/754713695
+Airport,松原查干湖机场,Songyuan Chaganhu Airport,YSQ,44.9287929,124.5499842,way/759559387
+Airport,玉林福绵机场,Yulin Fumian Airport,YLX,22.4329871,110.1209335,way/761265053
+Airport,澜沧景迈机场,Lancang Jingmai Airport,JMJ,22.4169532,99.7842921,way/761453398
+Airport,扎兰屯成吉思汗机场,Jalan Genghis Khan Airport,NZL,47.8645389,122.7682417,way/772263727
+Airport,邯郸机场,Handan Airport,HDG,36.5247178,114.4238734,way/772790523
+Airport,霍林郭勒霍林河机场,Holingol Huolinhe Airport,HUO,45.4865702,119.4087543,way/779440494
+Airport,张家界荷花国际机场,Zhangjiajie Hehua International Airport,DYG,29.1031088,110.4435037,way/787987141
+Airport,湛江吴川国际机场,Zhanjiang Wuchuan International Airport,ZHA,21.483083,110.59204,way/794278540
+Airport,达州金垭机场,Dazhou Jinya Airport,DZH,31.0493873,107.4357762,way/795301574
+Airport,安阳红旗渠机场,Anyang Hongqiqu Airport,HQQ,35.8689362,114.4655781,way/808480677
+Airport,成都淮州机场,Chengdu Huaizhou Airport,HZU,30.6777414,104.5283438,way/825450985
+Airport,台州路桥机场,Taizhou Luqiao Airport,HYN,28.562449,121.4279375,way/833526351
+Airport,陇川广宋通用机场,Longchuan Guangsong General Airport,LCS,24.2667438,97.9049737,way/838363850
+Airport,绵阳南郊机场,Mianyang Nanjiao Airport,MIG,31.4310916,104.7387365,way/840437374
+Airport,图木舒克唐王城机场,Tumxuk Tangwangcheng Airport,TWC,39.8897044,79.2354116,way/851596366
+Airport,于田万方机场 كېرىيە ئايرودرومى,Yutian Wanfang Airport,YTW,36.8093854,81.7859023,way/854882022
+Airport,南昌瑶湖机场,Nanchang Yaohu Airport,YHJ,28.7028809,116.1076436,way/870855323
+Airport,连云港花果山国际机场,Lianyungang Huaguoshan Airport,LYG,34.413025,119.1784771,way/874071145
+Airport,安康富强机场,Ankang Fuqiang Airport,AKA,32.7555162,108.873375,way/890935944
+Airport,五大连池德都机场,Wudalianchi Dedu Airport,DTU,48.4424325,126.1321143,way/909914014
+Airport,日喀则定日机场,Shigatse Tingri Airport,DDR,28.6033832,86.7976647,way/912318511
+Airport,甘孜康定机场,Kangding Airport,KGT,30.1430251,101.7387331,way/955167288
+Airport,德清莫干山通用机场,Deqing Moganshan Airport,DEQ,30.5026577,120.1073994,way/958849988
+Airport,乌海机场,Wuhai Regional Airport,WUA,39.7932711,106.8010268,way/970340742
+Airport,阿里普兰机场,A'li Pulan Airport,APJ,30.398856,81.1331904,way/970443901
+Airport,塔什库尔干红其拉甫机场 تاشقۇرغان ئايرودرومى,Taxkorgan Airport,HQL,37.6613224,75.2888313,way/977746844
+Airport,张家口宁远机场,Zhangjiakou Ningyuan Airport,ZQZ,40.7382198,114.9362294,way/978039135
+Airport,绥芬河东宁机场,Suifenhe Dongning Airport,HSF,44.453633,130.8452253,way/984792748
+Airport,鄂州花湖国际机场,Ezhou Huahu International Airport,EHU,30.3408957,115.0396929,way/984793860
+Airport,重庆仙女山机场,Chongqing Xiannüshan Airport,CQW,29.4651025,107.694711,way/997094457
+Airport,赣州瑞金机场,Ganzhou Ruijin Airport,JRJ,25.9600229,116.077139,way/1000092380
+Airport,海北祁连机场,Haibei Qilian Airport,HBQ,38.0093846,100.6415645,way/1002204206
+Airport,蚌埠滕湖机场,Bengbu Tenghu Airport,BFY,33.1659757,117.0575447,way/1012656357
+Airport,肇东北大荒通用机场,Zhaodong Beidahuang General Airport,HLJ,46.1300308,125.775677,way/1014501879
+Airport,亳州机场,Bozhou Airport,BZJ,33.561385,115.9074381,way/1019456470
+Airport,山南隆子机场,Shannan Lhuntse,LGZ,28.423304,92.3479263,way/1033468090
+Airport,阿拉尔塔里木机场,Aral Talim Airport,ACF,40.433067,81.2587393,way/1060129505
+Airport,荆州沙市机场,Jingzhou Shashi Airport,SHS,30.290608,112.4466799,way/1066229645
+Airport,兰州中川国际机场,Lanzhou Zhongchuan Int'l Airport,LHW,36.5190294,103.6321138,way/1077786411
+Airport,郑州新郑国际机场,Zhengzhou Xinzheng Int'l Airport,CGO,34.5271183,113.8509996,way/1083966585
+Airport,昭苏天马机场 موڭعولكۇرە اۋەجايى,Zhaosu Tianma Airport,ZFL,43.0885613,81.2230134,way/1094260467
+Airport,屯留沙家庄机场,,A68,36.2803628,112.9093143,way/1182860689
+Airport,邵阳武冈机场,Shaoyang Wugang Airport,WGN,26.8062665,110.6405384,way/1185212590
+Airport,湘西边城机场,Xiangxi Biancheng Airport,DXJ,28.495068,109.5196993,way/1197981329
+Airport,呼玛鹿鼎山机场,Huma Ludingshan Airport,HMX,51.5697261,126.5124703,way/1205919558
+Airport,永川大安通用机场,Yongchuan Da'an General Airport,YGA,29.3567478,106.009486,way/1271512897
+Airport,和静巴音布鲁克机场,Hejing Bayinbuluke Airport,HJB,42.9760847,83.9927333,way/1282675813
+Airport,奇台江布拉克机场,Qitai Jiangbulake Airport,JBK,44.164891,89.5520833,way/1283290242
+Airport,丽水莲都机场,Lishui Liandu Airport,LIJ,28.3709397,119.8355756,way/1349526413
+Airport,东阳横店通用机场,Dongyang General Airport,HEW,29.1230812,120.2436709,way/1375640528
+Airport,西安咸阳国际机场,Xi'an Xianyang International Airport(XIY),XIY,34.4423416,108.7601227,way/1377770481
+Airport,崇州豪芸通用机场,,A37,30.6582304,103.6477493,way/1467098090
+Airport,铜仁德江机场,Tongren Dejiang Airport,DEJ,28.13476,108.1644436,way/1490839647
+Airport,南京禄口国际机场,Nanjing Lukou International Airport,NKG,31.7318524,118.863455,relation/1903184
+Airport,澳門國際機場 Aeroporto Internacional de Macau,Macau International Airport,MFM,22.1498791,113.5840388,relation/2589459
+Airport,巴彦淖尔天吉泰机场,Bayannur Tianjitai Airport,RLK,40.9256163,107.7455308,relation/3552457
+Airport,福州长乐国际机场,Fuzhou Changle International Airport,FOC,25.9331448,119.6725392,relation/6590167
+Airport,温州龙湾国际机场,Wenzhou Longwan International Airport,WNZ,27.9087027,120.85019,relation/9056579
+Airport,北京大兴国际机场,Beijing Daxing International Airport,PKX,39.4972686,116.4313575,relation/9260711
+Airport,成都双流国际机场,Chengdu Shuangliu International Airport,CTU,30.5546804,103.9463289,relation/9484398
+Airport,海口美兰国际机场,Haikou Meilan International Airport,HAK,19.944273,110.4625001,relation/10106018
+Airport,莎车叶尔羌机场 يەكەن ئايرودرومى,Shache Airport,QSZ,38.2433111,77.0578634,relation/10356893
+Airport,敦煌莫高国际机场,Dunhuang Mogao International Airport,DNH,40.1634504,94.8125888,relation/10357707
+Airport,二连浩特赛乌苏国际机场,Erenhot Saiwusu International Airport,ERL,43.4236159,112.0932443,relation/10861264
+Airport,贵阳龙洞堡国际机场,Guiyang Longdongbao International Airport,KWE,26.5411039,106.8024027,relation/11736182
+Airport,阜阳机场,Fuyang Xiguan Airport,FUG,32.8818614,115.7337763,relation/12911761
+Airport,庆阳机场,Qingyang Airport,IQN,35.8019092,107.6000494,relation/13052400
+Airport,满洲里西郊国际机场,Manzhouli Xijiao Airport,NZH,49.5672223,117.3265979,relation/13061833
+Airport,宜昌三峡机场,Yichang Sanxia Airport,YIH,30.5532975,111.4840028,relation/13814855
+Airport,桂林两江国际机场,Guilin Liangjiang International Airport,KWL,25.2222208,110.0433319,relation/13846706
+Airport,包头东河国际机场,Baotou Donghe International Airport,BAV,40.5598457,109.9992184,relation/14511576
+Airport,香港國際機場 Hong Kong International Airport,Hong Kong International Airport,HKG,22.3125522,113.9113438,relation/16105017
+Airport,长沙黄花国际机场,Changsha Huanghua International Airport,CSX,28.1900429,113.22122,relation/16735999
+Airport,乌鲁木齐天山国际机场 ئۇرۇمچى تيەنشەن خەلقئارا ئايرودرومى,Ürümqi Tianshan International Airport,URC,43.9141122,87.4758401,relation/18966510
+Airport,嘉兴南湖机场,Jiaxing Nanhu Airport,JNH,30.7041836,120.6691563,relation/19471146
+Airport,济南遥墙国际机场,Jinan Yaoqiang International Airport(TNA),TNA,36.8532671,117.2112613,relation/19508905
+Airport,广州白云国际机场,Guangzhou Baiyun International Airport,CAN,23.3862158,113.3016995,relation/19772898
+Airport,上海浦东国际机场,Shanghai Pudong International Airport,PVG,31.1426648,121.8148024,relation/19842271
+Airport,长白山机场,Changbaishan Airport,NBS,42.0673794,127.6035199,relation/19990077
+Airport,南宁吴圩国际机场,Nanning Wuxu International Airport,NNG,22.5979964,108.1827859,relation/20079034
+Seaport,岚山港 Lanshan,,,35.108815,119.3740455,node/916287766
+Seaport,黃竹角海 Wong Chuk Kok Hoi,Wong Chuk Kok Hoi,,22.5076453,114.3152313,node/1137532218
+Seaport,东岛码头,,,16.6665364,112.7241796,node/1915707062
+Seaport,珊瑚岛港口,,,16.5317839,111.6067781,node/1915774668
+Seaport,白马井港,Pai-ma-ching Chiao;Baimajing Gang,,19.7190081,109.2233195,node/3920358258
+Seaport,谭门港,Tanmen Gang,,19.2361181,110.6205737,node/3921684579
+Seaport,躉船港池 Barging Basin,Barging Basin,,22.2735253,114.2684874,node/5411830390
+Seaport,东平渔港码头,,,21.7374834,112.2226922,node/6502890100
+Seaport,宿迁港,,,33.8539024,118.3425348,node/8164699936
+Seaport,重庆·奉节港,Chongqing · Fengjie Port,,31.044103,109.5397371,node/9966793461
+Seaport,朝天门码头,Chaotianmen Dock,,29.5643344,106.5868434,node/13136998569
+Seaport,十六铺码头,Shiliupu Wharf,,31.2306232,121.4938144,node/13163086247
+Seaport,南疆港区,,,38.9736125,117.7611849,way/136739388
+Seaport,上港集团军工路码头,SIPG Jungong Road Dock,,31.3507008,121.5095335,way/154618453
+Seaport,威海旅游码头,,,37.5040276,122.1225776,way/155276537
+Seaport,上海集装箱码头有限公司张华浜码头,Shanghai Container Terminal,,31.3684909,121.4939001,way/168476034
+Seaport,宁波舟山港股份有限公司北仑第二集装箱码头分公司,"Ningbo-Zhoushan Port Group Beilun Second Container Terminal Co.,ltd",,29.9392977,121.8354443,way/172381552
+Seaport,固始港区中心作业区,,,32.4745706,115.7885699,way/177180416
+Seaport,高栏港,,,21.9329355,113.2246772,way/196797465
+Seaport,北大嶼山廢物轉運站 North Lantau Waste Transfer Station,North Lantau Waste Transfer Station,,22.3188962,113.9969302,way/232502527
+Seaport,宁波舟山港股份有限公司北仑第三集装箱码头分公司,"Ningbo-Zhoushan Port Group Beilun Third Container Terminal Co.,ltd",,29.8867552,122.0441272,way/251732414
+Seaport,內河貨運碼頭 River Trade Terminal,River Trade Terminal,,22.3638908,113.9407156,way/257587851
+Seaport,盐田港,Yantian Port,,22.5749413,114.2683976,way/261283912
+Seaport,洋山深水港,Yangshan Deep-Water Port,,30.6222342,122.068148,way/288011754
+Seaport,上港集团龙吴分公司（关港装卸站）,"Shanghai International Port (Group) Co., Ltd. Longwu Branch",,31.0952246,121.4577152,way/295100795
+Seaport,颍州港,Yingzhou Port,,32.8426302,115.9073872,way/297205812
+Seaport,招商局碼頭 China Merchant's Wharf,China Merchant's Wharf,,22.2829368,114.1222389,way/312192583
+Seaport,港島西廢物轉運站 Island West Transfer Station,Island West Transfer Station,,22.2811454,114.1191948,way/312192586
+Seaport,枣庄港,,,34.7294618,117.2457938,way/321245424
+Seaport,西區公眾貨物裝卸區 Western District Public Cargo Working Area,Western District Public Cargo Working Area,,22.2875937,114.1319254,way/343471180
+Seaport,皖港码头,,,31.8212292,117.4532703,way/368896243
+Seaport,日照港,,,35.343245,119.5361293,way/449215705
+Seaport,烟台港,,,37.5671994,121.3794771,way/449235627
+Seaport,韩华海洋工程（山东）有限公司,,,37.6236411,121.1341956,way/449235631
+Seaport,岚桥港,Lanqiao Port,,35.1023635,119.3803434,way/453029062
+Seaport,兰州港,,,36.0640401,103.8243474,way/460534033
+Seaport,厦门港,,,24.5264691,118.0885291,way/472074996
+Seaport,厦门港务海通码头,,,24.4448506,118.032778,way/472086031
+Seaport,后渚港,,,24.881268,118.682076,way/473744110
+Seaport,东疆港区,Port of Tianjin,,39.0333453,117.7738567,way/476319380
+Seaport,天津港,Port of Tianjin,,38.9976923,117.7506968,way/476319391
+Seaport,南通通海港口,Nantong Tonghai Terminal,,31.7997059,121.025288,way/481012931
+Seaport,洋山深水港,Yangshan Deep-Water Port,,30.6184961,122.0636248,way/484481778
+Seaport,新田港,,,30.668897,108.3826818,way/489141444
+Seaport,金井港区,,,25.4493501,119.6818959,way/511682035
+Seaport,大窑湾港,Dalian Container Terminal (DCT),,39.0101194,121.8650583,way/514698129
+Seaport,云池深水港,,,30.4719036,111.4493551,way/518708095
+Seaport,寸滩自贸港,Cuntan Free Trade Port,,29.62082,106.5878939,way/531288260
+Seaport,宜宾港,,,28.7928225,104.7643494,way/533387575
+Seaport,后渚港,,,24.8865474,118.6811426,way/538427254
+Seaport,关累港,Guanlei Port,,21.6788109,101.1324791,way/542240684
+Seaport,洋山港保税区,,,30.86583,121.8782545,way/542560929
+Seaport,宁波舟山港股份有限公司梅东集装箱码头分公司,"Ningbo-Zhoushan Port Group Meidong Container Terminal Co.,ltd",,29.7748523,122.0000446,way/544521507
+Seaport,宁波舟山港股份有限公司北仑第一集装箱码头分公司,"Ningbo-Zhoushan Port Group Beilun First Container Terminal Co.,ltd",,29.9282026,121.8628506,way/544521509
+Seaport,远海码头,,,24.4565476,117.9749684,way/544588067
+Seaport,广州港南沙港区粮食及通用码头,,,22.6735927,113.6636986,way/544835675
+Seaport,环卫码头,,,31.1267033,121.461779,way/546229833
+Seaport,威海青威集装箱码头,Weihai Qingwei Container Terminal,,37.4470571,122.1933116,way/546548673
+Seaport,Anji Rivertech,,,30.7132602,119.701105,way/546560516
+Seaport,安庆港五里庙作业区,Anqing Port,,30.5049582,117.0785505,way/546568101
+Seaport,九江市城西港区集装箱码头,,,29.7219283,115.8894298,way/546568102
+Seaport,Changshu Xinghua,,,31.7637044,120.9404845,way/546624523
+Seaport,长沙港,Changsha Port,,28.3222662,112.9303685,way/546624524
+Seaport,Hongyun Terminal,,,29.0028779,111.7024188,way/546624525
+Seaport,常州录安洲码头,Changzhou Lu An Zhou Terminal,,31.9903931,119.9763392,way/546626824
+Seaport,涪陵港,Fuling Port Authority,,29.7407035,107.361464,way/551606122
+Seaport,南昌国际集装箱码头,,,28.7644904,115.898656,way/552619107
+Seaport,九澳港貨櫃碼頭及燃油碼頭 Terminais De Contentores E De Combustiveis,,,22.1341734,113.5848927,way/552740241
+Seaport,日照黄海中心渔港,,,35.3252006,119.479247,way/553062889
+Seaport,古雷码头,,,23.7700627,117.5834808,way/553148080
+Seaport,合肥港综合码头,,,31.7995223,117.3818464,way/553676247
+Seaport,潮州港,,,23.5578691,117.0946855,way/560438010
+Seaport,潮州港（三百门港区）,,,23.6131633,116.9721377,way/560452115
+Seaport,南沙货运码头,,,22.7986513,113.5854782,way/564086021
+Seaport,大连新港,,,38.9677845,121.9050145,way/569144897
+Seaport,汕头国际集装箱码头,Shantou International Container Terminal,,23.3548689,116.7210519,way/571732722
+Seaport,云浮新港,Port of Yunfu,,23.0693212,112.0346071,way/584478875
+Seaport,清澜港,,,19.5521601,110.8292043,way/588605281
+Seaport,钦州保税港区,,,21.6773613,108.6456832,way/592323269
+Seaport,林鑫物流(沣东物流中心),,,34.3020277,108.7691281,way/595680340
+Seaport,普洛斯西安高新产业园,,,34.1882748,108.8204821,way/595680341
+Seaport,洪灣漁港,,,22.1793946,113.4341693,way/605572363
+Seaport,泸州港国际集装箱码头,,,28.8847335,105.5290332,way/609665245
+Seaport,和乐港,Volor Port,,22.8946842,113.0936272,way/617728443
+Seaport,海燃码头,,,22.9804547,113.0527179,way/637435829
+Seaport,澜石记忆公园,Lan Shek Memory Park,,22.9780617,113.1054145,way/637471339
+Seaport,贵港港苏湾作业区,,,23.0998985,109.6790664,way/637480747
+Seaport,高明港,,,22.8704259,112.9053613,way/638258012
+Seaport,Long Tong Wharf,,,23.009759,113.6913355,way/639323139
+Seaport,散装货码头,,,35.3541723,119.5268492,way/649111095
+Seaport,散装货码头,,,35.3357314,119.5293505,way/649111096
+Seaport,散装货码头,,,35.3219001,119.518073,way/649111097
+Seaport,油料码头,,,35.3716729,119.5304458,way/649111101
+Seaport,散装货码头,,,35.3778435,119.5455013,way/649111102
+Seaport,油料码头,,,35.3727992,119.5563326,way/649111103
+Seaport,散装货码头,,,35.3637625,119.5509492,way/649111104
+Seaport,粮食储备库内河港口,,,31.3072499,121.6854666,way/654749533
+Seaport,水富港,,,28.6320132,104.4169264,way/663074786
+Seaport,容奇港,Rongqi Port,,22.7833178,113.2851055,way/667074197
+Seaport,郑蒲港,,,31.6479064,118.3821054,way/675912489
+Seaport,东沙港,Dongsha Port,,23.0484549,113.2468017,way/680185016
+Seaport,南海国际货柜码头,,,23.0423373,113.2453443,way/680185024
+Seaport,涠洲终端油气码头,,,21.051677,109.086066,way/685465520
+Seaport,威海南海新港,,,36.8608351,122.0434744,way/689447185
+Seaport,金石滩港,,,39.0822958,122.0485125,way/691209519
+Seaport,南海海巡执法总队,,,22.8026125,113.5850741,way/693376749
+Seaport,洋浦国际集装箱码头,Yanpu international cargo terminal,,19.7178526,109.1679051,way/695834906
+Seaport,洋浦港口,Yanpu port,,19.7308241,109.2011351,way/695834907
+Seaport,唐山港 曹妃甸港区,Caofeidian Port,,38.9873129,118.4745135,way/698413469
+Seaport,北滘港,Beijiao Port,,22.8998629,113.2181078,way/707182463
+Seaport,百色港大旺码头,,,23.8429492,106.6435846,way/717543214
+Seaport,平顶山港,,,33.7033248,113.4179176,way/760092524
+Seaport,Fuzhou Qingzhou Container Terminal,,,26.0084781,119.4772677,way/776103152
+Seaport,三水港,,,23.1042379,112.8045815,way/777719784
+Seaport,小榄港,Xiaolan Port,,22.668703,113.2610719,way/777967039
+Seaport,合川思居货运港,Hechuan-Siju Port Authority,,30.0531582,106.2963938,way/779274403
+Seaport,下甸桥港区,,,31.5320452,120.3325592,way/783905607
+Seaport,合肥港南淝河港区三汊河作业区,,,31.7757245,117.4295891,way/786544030
+Seaport,荆州港,,,30.0833385,112.3112727,way/793819111
+Seaport,南庄码头,,,23.0064803,112.98589,way/796092710
+Seaport,赣州港,,,25.7057407,114.8145881,way/799522587
+Seaport,路環聯生工業邨臨時D碼頭,,,22.1246856,113.5515758,way/804918780
+Seaport,北海港,,,21.4699674,109.0624136,way/806466244
+Seaport,贵港港猫儿山作业区,,,23.0838057,109.6256186,way/807569019
+Seaport,渭沱物流园区港,,,30.038945,106.2092363,way/807723445
+Seaport,合川石盘沱货运港,Hechuan-Shipantuo Port Authority,,29.9694446,106.3501209,way/809647422
+Seaport,来宾港,,,23.7081707,109.1613764,way/810664699
+Seaport,秀英港,Xiuying Port,,20.0310359,110.281225,way/813483542
+Seaport,金坛港,,,31.7725482,119.5381824,way/815807340
+Seaport,洋山四期自动化码头,,,30.6544835,122.0250709,way/822111020
+Seaport,顺德新港,Shunde Xingang Port,,22.765822,113.0994789,way/822391909
+Seaport,太平湾码头,,,37.5446197,121.3928715,way/828795221
+Seaport,崇左港将军岭码头,,,22.7150843,107.9714452,way/838702133
+Seaport,合肥撮镇废钢码头,,,31.8204693,117.4562045,way/844297702
+Seaport,昭关大埠货运码头,,,31.8610271,118.0493113,way/846686324
+Seaport,維多利亞港 Victoria Harbour,Victoria Harbour,,22.2935523,114.1777921,way/851848400
+Seaport,南京港龙潭港区,,,32.2006408,119.0585627,way/851967166
+Seaport,台山公益港,Gongyi Port,,22.4355172,112.7772772,way/860540825
+Seaport,山咀港,,,21.850339,112.687362,way/860554891
+Seaport,南京明州码头,,,32.1822683,119.0355808,way/871600939
+Seaport,马鞍山港,Ma'anshan Port,,31.7367097,118.4674426,way/877467222
+Seaport,运河宿迁港物流园,,,33.8524623,118.3378101,way/877484765
+Seaport,金航港务,,,27.7976663,112.9178359,way/887009684
+Seaport,海宁港,,,30.5828125,120.6594995,way/893351336
+Seaport,中山港国际货柜码头,,,22.5718616,113.4802408,way/909468817
+Seaport,中山港外贸码头,,,22.5724412,113.4756864,way/909468818
+Seaport,颍河阜阳闸,,,32.9009167,115.8337206,way/914282550
+Seaport,崇左港濑湍码头,,,22.4852467,107.514491,way/916471352
+Seaport,莲花山港,,,22.9660313,113.5008222,way/921990430
+Seaport,新海港,Xinhai Harbour,,20.0522307,110.1502457,way/936107351
+Seaport,柴灣公眾貨物裝卸灣 Chai Wan Public Cargo Handling Bay,Chai Wan Public Cargo Handling Bay,,22.2708789,114.2436779,way/943558456
+Seaport,柴灣公眾貨物裝卸區 Chai Wan Public Cargo Working Area,Chai Wan Public Cargo Working Area,,22.2696011,114.2435964,way/943558460
+Seaport,柴灣公眾貨物裝卸區港池 Chai Wan Public Cargo Handling Basin,Chai Wan Public Cargo Handling Basin,,22.2698211,114.2436689,way/943558462
+Seaport,南港码头,,,23.0430701,113.2102267,way/946195254
+Seaport,阳逻集装箱港,,,30.6720414,114.548108,way/947971868
+Seaport,柳州港官塘作业区,,,24.4249655,109.5225459,way/952705380
+Seaport,深水角氯氣裝卸區 Sham Shui Kok Chlorine Unloading Area,Sham Shui Kok Chlorine Unloading Area,,22.3197504,113.9974817,way/953618280
+Seaport,规划港口,,,28.6729194,121.4880194,way/957424166
+Seaport,新油麻地公眾貨物裝卸區 Marine Department New Yau Ma Tei Public Cargo Working Area,New Yau Ma Tei Public Cargo Working Area,,22.3100612,114.1593359,way/963191593
+Seaport,龙沙港,,,23.0591709,113.4808032,way/966249779
+Seaport,徐州港睢宁港区沙集作业区码头,,,33.9002432,118.1212297,way/967150169
+Seaport,宜昌港客运中心,,,30.6828522,111.2996917,way/968362449
+Seaport,宿迁港,,,33.8527117,118.3450838,way/971346329
+Seaport,运河港二期码头,,,33.8586162,118.3369889,way/971346330
+Seaport,运河港三期码头,,,33.8482053,118.3549144,way/971346331
+Seaport,三江口码头,,,32.2361201,119.0848969,way/973904283
+Seaport,唐山港 京唐港区,,,39.2225288,119.0307654,way/976518200
+Seaport,唐山港 曹妃甸港区,,,38.9308533,118.5219762,way/979925022
+Seaport,唐山港 曹妃甸港区,,,38.9786397,118.449478,way/979925023
+Seaport,深渡港,,,29.8658341,118.6137321,way/983768105
+Seaport,济宁港,,,35.3837685,116.5505447,way/984699734
+Seaport,防城港海事码头,,,21.6239206,108.316216,way/990476768
+Seaport,曹妃甸文丰码头,,,39.100222,118.4976568,way/990516716
+Seaport,同江港,,,47.6521817,132.468146,way/992190264
+Seaport,曹妃甸港文丰木材码头,,,39.1054913,118.5048011,way/996016943
+Seaport,西湾旅游码头,Xiwan Tourism Whart,,21.6279002,108.3419404,way/996080048
+Seaport,漯河港,,,33.6239057,114.0736923,way/1004007392
+Seaport,肇庆三榕港,,,23.0813346,112.4007026,way/1004721085
+Seaport,广澳港区2期,Guangao Terminal Phase 2,,23.2297844,116.7717868,way/1009328518
+Seaport,何大码头,,,21.8531019,108.460434,way/1015162899
+Seaport,內河貨運碼頭 River Trade Terminal,River Trade Terminal,,22.3627263,113.9412205,way/1017548353
+Seaport,安徽慈湖港务有限公司,"Anhui Cihu Port Co., Ltd.",,31.7570504,118.4800641,way/1017867841
+Seaport,夜明珠码头,,,30.7424659,111.3011463,way/1023522617
+Seaport,淮滨中心港区,,,32.4598533,115.46198,way/1024286977
+Seaport,广州港南沙港区四期全自动化码头,Guangzhou Port Nansha Phase 4 Automated Terminal,,22.6597293,113.6605002,way/1028516090
+Seaport,竹江码头,Zhujiang pier,,25.130617,110.4289237,way/1029216996
+Seaport,龙沙港,,,23.0591709,113.4808032,way/1032021149
+Seaport,上港集团张华浜码头,,,31.360818,121.4962536,way/1037077593
+Seaport,三山岛渔港,,,37.4110184,119.9427991,way/1038016830
+Seaport,北海救助局烟台基地救助码头,,,37.5976294,121.3926536,way/1040203675
+Seaport,烟台打捞局客运码头,,,37.5996106,121.3894422,way/1040208416
+Seaport,襄阳港小河港区,Xiangyang Port Xiaohe Harbor Zone,,31.7869096,112.1727513,way/1041363342
+Seaport,曹妃甸港液体化工码头,,,39.0409548,118.5211363,way/1046042376
+Seaport,息县闾河口港区,,,32.3819103,115.1155478,way/1056506963
+Seaport,荣成市龙都水产科技有限公司北海码头,,,37.4183349,122.6736047,way/1060208419
+Seaport,露塘码头,,,24.4558321,109.3101633,way/1070610014
+Seaport,百色港祥周码头,,,23.6147553,107.0549447,way/1079956388
+Seaport,百色港头塘码头,,,23.7509169,106.8286385,way/1079956392
+Seaport,周口港中心码头,,,33.5726552,114.8016002,way/1080957491
+Seaport,唐山丰南纵横码头,,,39.1982039,118.1342456,way/1084267810
+Seaport,安徽港口合肥派河港,,,31.7021456,117.217027,way/1091165904
+Seaport,东洲国际港,,,30.0660844,120.070164,way/1094438754
+Seaport,曹妃甸港油气码头,,,38.920949,118.5135369,way/1094739374
+Seaport,瓶窑码头,,,30.3984767,119.9713694,way/1095611062
+Seaport,厦门港龙海客运站,Longhai Passenger port terminal,,24.4297262,117.8374801,way/1105332045
+Seaport,浙江武港码头,,,29.7266433,122.202536,way/1106716987
+Seaport,天津渤化南港码头仓储有限公司,,,38.7118028,117.6140391,way/1110804510
+Seaport,塘湾码头,,,30.1914883,120.2910206,way/1117707119
+Seaport,济南港章丘港区,,,36.9092055,117.3662591,way/1123027997
+Seaport,杨汛港区,,,30.1528009,120.3523002,way/1123259115
+Seaport,北海港海角作业区,,,21.4808625,109.0864342,way/1124328212
+Seaport,货物码头,,,33.9063886,118.3155379,way/1125007518
+Seaport,新塘港,,,23.1072391,113.5989368,way/1125220359
+Seaport,曹妃甸港集装箱码头,,,38.9919641,118.4742435,way/1130786769
+Seaport,曹妃甸港通用码头,,,38.981131,118.4745162,way/1130786770
+Seaport,铁山东港区玉林海港码头,,,21.5893319,109.6051059,way/1135120005
+Seaport,黄石多式联运新港综合站场,,,30.1333688,115.2681148,way/1135359777
+Seaport,黄石棋盘洲港,,,30.1369563,115.2705006,way/1135359778
+Seaport,中山中外运仓码有限公司,,,22.5714511,113.4884809,way/1157149761
+Seaport,巨野港,,,35.3908394,116.1436661,way/1165553423
+Seaport,下沙港,,,30.3302525,120.2959551,way/1169655538
+Seaport,金科园云天码头,,,31.7776817,119.5777696,way/1174532617
+Seaport,崇贤港,,,30.4032082,120.1291901,way/1175827733
+Seaport,国电煤码头,,,33.8465955,118.3657108,way/1180224036
+Seaport,肇庆新港,,,23.1874096,112.6410236,way/1182060949
+Seaport,卫康码头,,,30.5026038,120.297621,way/1189857670
+Seaport,荃湾煤炭码头,,,22.7127137,114.5847888,way/1190935701
+Seaport,神泉渔港,,,22.9570494,116.3201617,way/1193288287
+Seaport,杭州五福码头,,,30.4697849,120.1392552,way/1193371741
+Seaport,企沙渔港1号码头,,,21.5912713,108.4722546,way/1194977968
+Seaport,叶根码头,,,30.4481514,120.1013644,way/1199678672
+Seaport,衡阳港口投资有限公司 衡阳港松木港区,,,26.9722551,112.6513074,way/1207951565
+Seaport,潍坊港西港区羊口作业区,,,37.2690789,118.8898715,way/1212455316
+Seaport,开阳港,,,27.1188018,107.1184664,way/1212713195
+Seaport,丁家桥千吨级港区,,,26.8663619,112.6349051,way/1213768043
+Seaport,湖北浙商中拓供应链管理有限公司大桥局码头,,,30.5319864,114.2648895,way/1216376469
+Seaport,珊瑚岛港口,,,16.5308914,111.6064515,way/1219061510
+Seaport,宜昌江森船务,,,30.8591198,111.0878518,way/1227086268
+Seaport,威海港国际客运中心,,,37.4381673,122.1858403,way/1236313335
+Seaport,济宁港航跃进港,,,35.4726676,116.469016,way/1239128339
+Seaport,彭泽红光港,,,29.8546351,116.4019138,way/1240734899
+Seaport,芜湖港,,,31.3952482,118.3520022,way/1241972219
+Seaport,鹤山莲花码头,,,22.8028833,113.0223017,way/1243479732
+Seaport,龙潭天辰码头,,,32.1790946,119.030425,way/1243700985
+Seaport,梁山港,,,35.8600675,116.0934688,way/1244599021
+Seaport,渡车船码头,,,22.7830037,113.263417,way/1247649795
+Seaport,嵩鼓码头,,,24.4567657,118.0409773,way/1248980581
+Seaport,钱清港,,,30.1460515,120.3902903,way/1250895168
+Seaport,泸州港龙江港区大脚石作业区,,,28.741744,105.2539029,way/1253541653
+Seaport,万山区唐家港码头,,,22.3748525,113.609421,way/1255675256
+Seaport,韩村综合码头,,,33.6385891,116.6553962,way/1265848281
+Seaport,孙疃码头,,,33.5701217,116.7493191,way/1267910141
+Seaport,济南港主城港区,,,36.830065,117.2348967,way/1271988971
+Seaport,泸州港纳溪港区石龙岩作业区,,,28.7598947,105.333983,way/1272334928
+Seaport,高要港,,,23.0390665,112.4215657,way/1272486918
+Seaport,南江码头,,,23.2226823,112.8137335,way/1274558748
+Seaport,乐山大件码头,,,29.5577771,103.7465246,way/1279584218
+Seaport,园区大型车辆停车场,,,34.1041526,118.3397056,way/1290038845
+Seaport,龙拱港,,,35.3220435,116.5610689,way/1298059331
+Seaport,游船码头,,,39.9425339,116.3106714,way/1303222081
+Seaport,荷花渡,,,39.9395874,116.3153399,way/1303222099
+Seaport,高青港花沟作业区,,,37.0711375,117.8187783,way/1312398103
+Seaport,东航装卸码头,,,23.0828809,112.0664145,way/1312502638
+Seaport,滨州港博兴港区,,,37.1190242,118.2232795,way/1313687293
+Seaport,南京港集团有限公司新生圩港务分公司,,,32.1677269,118.8631855,way/1315994745
+Seaport,藍巴勒海峽公眾貨物裝卸區 Rambler Channel Public Cargo Working Area,Rambler Channel Public Cargo Working Area,,22.3559424,114.1141718,way/1317078648
+Seaport,藍巴勒海峽避風塘 Rambler Channel Typhoon Shelter,Rambler Channel Typhoon Shelter,,22.3558229,114.114231,way/1317078650
+Seaport,南京港江盛汽车码头有限公司,,,32.2200303,119.0698105,way/1317513861
+Seaport,南京港龙潭天宇码头有限公司,,,32.2118705,119.0671876,way/1317513862
+Seaport,乐亭中心渔港,,,39.2899403,119.1216247,way/1328382713
+Seaport,沙市盐卡港区,,,30.2718878,112.2873546,way/1328386471
+Seaport,湖南城陵矶国际集装箱港,,,29.4712836,113.1778082,way/1337853539
+Seaport,锦州港,,,40.8097914,121.0424445,way/1346808487
+Seaport,盛隆码头,,,21.6666036,108.4067795,way/1347716738
+Seaport,盘锦港,,,40.7042799,122.0211594,way/1347724216
+Seaport,营口港,,,40.2836255,122.0849883,way/1347986562
+Seaport,营口港仙人岛港区,,,40.200261,121.9840086,way/1348011797
+Seaport,南平港洋坑码头,,,26.5561059,118.3159659,way/1349153236
+Seaport,固始港区周集作业区项目,,,32.2320304,115.617562,way/1349357646
+Seaport,逍遥港,,,33.7403117,114.2797235,way/1352492674
+Seaport,光门李码头,,,33.7121918,113.594993,way/1352492698
+Seaport,姚湾综合港区,,,28.5014332,115.8252212,way/1356853275
+Seaport,宣城国家陆港,,,31.0048053,118.7074256,way/1357763020
+Seaport,益阳港清水潭港区,,,28.6165534,112.3805961,way/1360812829
+Seaport,南港站,Nangang Station,,20.039873,110.1535406,way/1366341734
+Seaport,绿华减载平台,,,30.8066203,122.6266775,way/1367360315
+Seaport,潍坊港宏川液化品码头有限公司,,,37.2726693,119.1979616,way/1368150354
+Seaport,昂船洲公眾貨物裝卸區 Stonecutters Island Public Cargo Working Area,Stonecutters Island Public Cargo Working Area,,22.3198673,114.125134,way/1369970977
+Seaport,水泥厂成品码头,,,24.2646256,113.41206,way/1370345907
+Seaport,馬灣奧尾避風塘 Ma Wan O Mei Typhoon Shelter,Ma Wan O Mei Typhoon Shelter,,22.3477709,114.0574826,way/1377374453
+Seaport,双墩渔港,,,21.5349917,108.2328201,way/1385489163
+Seaport,江山港,,,21.5282801,108.2263256,way/1385489164
+Seaport,外贸码头 宏锦码头,,,21.4804644,109.0837954,way/1388023532
+Seaport,海阳港,,,36.6782422,121.2381603,way/1389073742
+Seaport,昌北防汛码头,,,28.7579521,115.8913002,way/1390476981
+Seaport,袁冲矿骨料配套码头,,,31.860055,118.0388863,way/1412663795
+Seaport,舵落口港,,,30.5975636,114.1450222,way/1419106928
+Seaport,祥港,,,29.5907881,106.6493237,way/1419957534
+Seaport,纳溪沟港,,,29.5875543,106.6357242,way/1419957535
+Seaport,窑湾港,,,34.1672108,118.0788914,way/1428996323
+Seaport,永泰港务有限公司,,,23.2324453,112.8093453,way/1431080911
+Seaport,闸坡国家级中心渔港,,,21.581275,111.8237532,way/1432210527
+Seaport,童埠码头,,,30.7233915,117.7981702,way/1435157120
+Seaport,东平港,,,36.0069019,116.2442004,way/1436208629
+Seaport,寿光港,,,37.2750514,118.9815357,way/1436211289
+Seaport,巴南佛耳岩港,,,29.3953987,106.4822858,way/1452657469
+Seaport,胜利龙玺（山东）石油工程技术服务股份公司海洋工程分公司码头,,,38.0811826,118.9303268,way/1453728271
+Seaport,中石化胜利油建工程有限公司码头,,,38.0829503,118.9347756,way/1453728274
+Seaport,中国石油化工股份有限公司胜利油田分公司海洋石油船舶中心码头,,,38.0846232,118.9391041,way/1453728275
+Seaport,山东海盛海洋工程集团有限公司船务公司码头,,,38.085863,118.9422992,way/1453728284
+Seaport,中石化胜利油建工程有限公司码头,,,38.0868122,118.9446959,way/1453728289
+Seaport,中石化胜利石油工程有限公司井下作业公司码头,,,38.087279,118.9457338,way/1453728290
+Seaport,山东海盛海洋工程集团有限公司工程公司码头,,,38.0878586,118.9471643,way/1453728295
+Seaport,中国石油化工股份有限公司胜利油田分公司海洋采油厂海工准备大队码头,,,38.0889684,118.9500703,way/1453728298
+Seaport,中石化石油工程地球物理有限公司胜利分公司码头,,,38.089715,118.9522781,way/1453728301
+Seaport,赣州港五云码头,,,25.9943468,114.9174333,way/1460718517
+Seaport,斗门港,,,22.275991,113.3279858,way/1462321436
+Seaport,永通码头,,,22.9635203,113.153802,way/1466735383
+Seaport,福新面粉厂码头,,,31.0047548,121.4279054,way/1467502152
+Seaport,芦苞大旺恒运装载码头,,,23.3537282,112.8792746,way/1467548644
+Seaport,花都港,Huadu Port,,23.350423,113.1281302,way/1476602755
+Seaport,津市港,,,29.5744914,111.8680443,way/1489812659
+Seaport,通沙港务,,,32.0163432,120.8069611,way/1493654949
+Seaport,通沙汽渡,,,32.0189408,120.8049726,way/1493654951
+Seaport,南利货柜码头,,,23.0449612,112.9820377,way/1500289127
+Seaport,中苑旅游码头,,,36.0522898,120.2981875,way/1524284182
+Seaport,武汉港,,,30.5815738,114.2946609,way/1525361214
+Seaport,韶关新港码头,,,24.7250879,113.5691137,way/1528321276
+Seaport,石岛湾核电大件码头,,,36.962871,122.5313994,way/1528435627
+Seaport,周口港中心港区中心作业区,,,33.5470205,114.8363282,way/1542861848
+Seaport,北村码头,,,23.1330327,113.1762968,way/1545412896
+Seaport,潍坊港区木片码头有限公司,,,37.2481577,119.1660124,way/1550628875
+Seaport,宿迁港中心港区张圩干渠码头,,,33.8326211,118.4066624,way/1551033336
+Seaport,滕州港,,,35.0735782,116.9028684,way/1553359978
+Seaport,康州港,,,23.1380604,111.817192,way/1553414150
+Seaport,南江港装卸码头,,,23.1299132,111.7932841,way/1553558265
+Seaport,黄埔新港,Huangpu New Port,,23.0507872,113.5153362,relation/4623458
+Seaport,青岛前湾集装箱码头,Port of Qingdao Qianwan（QQCT）,,36.008329,120.2260715,relation/6827312
+Seaport,沙堤湾,Shadi Wan,,21.6146817,112.757696,relation/6965559
+Seaport,維多利亞港 Victoria Harbour,Victoria Harbour,,22.3235719,114.1585996,relation/8252641
+Seaport,广澳港区1期,Guangao Terminal Phase 1,,23.2239181,116.7783262,relation/8272080
+Seaport,活力新港公园,,,22.9801951,113.124122,relation/8540838
+Seaport,三水南港码头,Sanshui Nangang Port,,23.1628813,112.8583151,relation/8546621
+Seaport,砧板灣 Jam Pan Wan,Jam Pan Wan,,22.2697715,114.3027512,relation/9279320
+Seaport,葵青貨櫃碼頭 Kwai Tsing Container Terminals,Kwai Tsing Container Terminals,,22.3366494,114.12411,relation/10507292
+Seaport,葵青貨櫃港池 Kwai Tsing Container Basin,Kwai Tsing Container Basin,,22.3362522,114.12389,relation/10599237
+Seaport,鸿洋神集团,,,37.3781776,122.6125219,relation/11330058
+Seaport,河口渔港;河口鱼粉厂,,,37.413731,122.5908528,relation/11364475
+Seaport,山东省马山集团,,,37.3165874,122.5677142,relation/11405296
+Seaport,新沙港,,,23.0187138,113.5306633,relation/13348421
+Seaport,大铲湾集装箱码头一期,,,22.5349699,113.858203,relation/13603040
+Seaport,海星码头 (妈湾港),Haixing Houbour,,22.4963788,113.866374,relation/13603042
+Seaport,妈湾集装箱码头,Mawan Container Terminal,,22.4880504,113.869012,relation/13603043
+Seaport,赤湾集装箱码头,Chiwan Container Terminal,,22.4668181,113.8767366,relation/13603046
+Seaport,南沙港,Nansha Port,,22.6332487,113.6779021,relation/13603153
+Seaport,广州南沙海港集装箱码头,Guangzhou South China Oceangate Container Terminal,,22.6332487,113.6791159,relation/13603397
+Seaport,香港仔南避風塘 Aberdeen South Typhoon Shelter,Aberdeen South Typhoon Shelter,,22.2411918,114.1623658,relation/13988174
+Seaport,香港仔西避風塘 Aberdeen West Typhoon Shelter,Aberdeen West Typhoon Shelter,,22.2464387,114.1520138,relation/13988175
+Seaport,銅鑼灣避風塘 Causeway Bay Typhoon Shelter,Causeway Bay Typhoon Shelter,,22.2850997,114.186189,relation/14139891
+Seaport,湄洲湾火电厂,Meizhou Wan power station,,25.1526579,119.0308839,relation/14163710
+Seaport,觀塘避風塘 Kwun Tong Typhoon Shelter,Kwun Tong Typhoon Shelter,,22.3104822,114.2152083,relation/15069373
+Seaport,蛇口集装箱码头,Shekou Container Terminal,,22.4565248,113.8905462,relation/15788753
+Seaport,东莞港,Dongguan Port,,22.8681718,113.5767708,relation/15789116
+Seaport,南沙港近洋码头,Nansha Port Near-Ocean Terminal,,22.8592596,113.5486864,relation/15789192
+Seaport,广州港南沙汽车滚装船码头(海嘉滚装船码头),,,22.864847,113.5424105,relation/15789193
+Seaport,大铲湾临时弃土外运码头,,,22.5263526,113.860881,relation/16226020
+Seaport,清水灣鄉村俱樂部遊艇會 The Clearwater Bay Golf & Country Club Golf Club Marina Club,The Clearwater Bay Golf & Country Club Marina Club,,22.2697715,114.3027512,relation/16768017
+Seaport,港口码头,Gangkou Port,,22.5627115,114.8899385,relation/17294026
+Seaport,防城港,Fangcheng Port,,21.5921913,108.3509009,relation/17431078
+Seaport,洋口港,,,32.5271829,121.4143442,relation/17730896
+Seaport,南港,South Port,,20.0448727,110.1454949,relation/18810088
+Seaport,海口市新海港码头,Haikou New Seaport,,20.0546317,110.1462286,relation/18810089
+Seaport,山东港口潍坊港东作业区,,,37.236979,119.1720244,relation/18845483
+Seaport,广州港南沙港区一期码头,Guangzhou Port Nansha Phase 1 Terminal,,22.6526658,113.6732025,relation/20318969
+Seaport,广州港南沙港区二期码头,Guangzhou Port Nansha Phase 2 Terminal,,22.6380591,113.6777057,relation/20318970
+Seaport,广州港南沙港区三期码头,Guangzhou Port Nansha Phase 3 Terminal,,22.6176001,113.6823896,relation/20318971
+Seaport,潍坊港区散货码头有限公司,,,37.2516169,119.1705165,relation/21243457
+Seaport,宣城国家陆港,,,31.0048053,118.7074256,way/1357763020
+Dry Port / ICD,青岛国际陆港,,,36.3635826,120.2867533,node/7195969451
+Dry Port / ICD,甘肃（天水）国际陆港,,,34.674441,105.6641435,node/9167159638
+Dry Port / ICD,牡丹江内陆港,,,44.619953,129.6503445,way/589212880
+Dry Port / ICD,营口港绥化陆港,,,46.6520022,127.0084207,way/675840866
+Dry Port / ICD,宝鸡陆港,,,34.3379878,107.4798757,way/752034103
+Dry Port / ICD,青岛国际陆港监管物流中心,,,36.3672423,120.2895084,way/770903727
+Dry Port / ICD,西南无水港,,,29.2966673,104.7369403,way/947628510
+Dry Port / ICD,南昌向塘国际陆港,,,28.4730178,115.9285166,way/1087111122
+Dry Port / ICD,平谷国际陆港,,,40.0846007,117.0175782,way/1104072601
+Dry Port / ICD,哈尔滨内陆港,,,45.7605899,126.7099939,way/1123114754
+Dry Port / ICD,侯马北陆港口岸,,,35.669296,111.4041426,way/1153433482
+Dry Port / ICD,陆港停车场（有上盖）,,,34.3634019,109.0698274,way/1212054855
+Dry Port / ICD,陆港建材物流园,,,34.4005965,109.1058253,way/1218015246
+Dry Port / ICD,贵州（昌明）国际陆港,,,26.3618173,107.1660172,way/1278492220
+Dry Port / ICD,合肥国际内陆港发展有限公司,,,31.9218441,117.2896945,way/1344405464
+Dry Port / ICD,通辽内陆港,,,43.6243653,122.1767191,way/1354185704
+Dry Port / ICD,郑州国际陆港铁路西站,,,34.3801696,113.9733241,way/1367883512
+Dry Port / ICD,陆海新通道重庆无水港,,,29.6403843,106.3727444,way/1429999139
+Dry Port / ICD,郑州国际陆港,,,34.3804828,114.0228295,way/1450364096
+Dry Port / ICD,沈北陆港,,,41.927393,123.4756361,way/1456292445
+Dry Port / ICD,长春兴隆国际陆港,,,43.9551558,125.468368,way/1475643291
