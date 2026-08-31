@@ -87,6 +87,12 @@
       <div id="chinaAirportList"></div>
       <div id="chinaSeaportList"></div>
       <div id="chinaDryportList"></div>
+      <div id="powerGridList"></div>
+    </section>
+
+    <section>
+      <h2>ASEAN Power Grid (OSM)</h2>
+      <div id="aseanPowerGridList"></div>
     </section>
 
     <section>
@@ -106,6 +112,8 @@
       <p>China motorway data: HOTOSM export of OpenStreetMap</p>
       <p>China railway data: OpenStreetMap official China Railway route relations, filtered to exclude HSR/intercity-only lines (ref 3xxx series)</p>
       <p>China airports/seaports/dry ports: OpenStreetMap via Overpass API, military airports excluded</p>
+      <p>China power grid: OpenStreetMap via Overpass API, 500kV+ backbone only</p>
+      <p>ASEAN power grid: OpenStreetMap via Overpass API, 220kV+ backbone only</p>
     </section>
   </div>
   <div id="map"></div>
@@ -462,6 +470,77 @@ if (ENABLE_CHINA_TRANSPORT) fetch('china_transport_points.json').then(r => r.jso
   });
 }).catch(err => {
   console.error('Failed to load China airports/seaports/dryports:', err);
+});
+
+// ---------- China power grid, 500kV+ backbone (OSM via Overpass) ----------
+if (ENABLE_CHINA_TRANSPORT) fetch('china_power_grid.json').then(r => r.json()).then(lines => {
+  const voltageGroups = new Map(); // voltage -> { layer, label, color }
+
+  lines.forEach(r => {
+    const latlngSets = r.segments.map(seg => seg.map(([lon, lat]) => [lat, lon]));
+    addClickableLine(
+      (() => {
+        let g = voltageGroups.get(r.voltage);
+        if (!g) { g = { layer: L.layerGroup(), label: r.voltageLabel, color: r.color }; voltageGroups.set(r.voltage, g); }
+        return g.layer;
+      })(),
+      latlngSets, { color: r.color, weight: 2.5, opacity: 0.8 },
+      `<span class="facility-tag" style="background:${r.color}">${r.voltageLabel}</span><b>${r.name}</b>`
+    );
+  });
+
+  const sortedVoltages = [...voltageGroups.keys()].sort((a, b) => parseInt(a) - parseInt(b));
+  const el = document.getElementById('powerGridList');
+  el.innerHTML = sortedVoltages.map(v => {
+    const g = voltageGroups.get(v);
+    return `<label class="chip">
+      <input type="checkbox" data-grid-voltage="${v}">
+      <span class="swatch line" style="background:${g.color}"></span>
+      <span>Power grid ${g.label}</span>
+    </label>`;
+  }).join('');
+  el.querySelectorAll('input[data-grid-voltage]').forEach(cb => {
+    cb.addEventListener('change', e => {
+      const layer = voltageGroups.get(e.target.dataset.gridVoltage).layer;
+      if (e.target.checked) map.addLayer(layer); else map.removeLayer(layer);
+    });
+  });
+}).catch(err => {
+  console.error('Failed to load China power grid:', err);
+});
+
+// ---------- ASEAN power grid, 220kV+ backbone (OSM via Overpass) ----------
+fetch('asean_power_grid.json').then(r => r.json()).then(lines => {
+  const voltageGroups = new Map();
+
+  lines.forEach(r => {
+    const latlngSets = r.segments.map(seg => seg.map(([lon, lat]) => [lat, lon]));
+    let g = voltageGroups.get(r.voltage);
+    if (!g) { g = { layer: L.layerGroup(), label: r.voltageLabel, color: r.color }; voltageGroups.set(r.voltage, g); }
+    addClickableLine(
+      g.layer, latlngSets, { color: r.color, weight: 2.5, opacity: 0.8 },
+      `<span class="facility-tag" style="background:${r.color}">${r.voltageLabel}</span><b>${r.name}</b>`
+    );
+  });
+
+  const sortedVoltages = [...voltageGroups.keys()].sort((a, b) => parseInt(a) - parseInt(b));
+  const el = document.getElementById('aseanPowerGridList');
+  el.innerHTML = sortedVoltages.map(v => {
+    const g = voltageGroups.get(v);
+    return `<label class="chip">
+      <input type="checkbox" data-asean-grid-voltage="${v}">
+      <span class="swatch line" style="background:${g.color}"></span>
+      <span>Power grid ${g.label}</span>
+    </label>`;
+  }).join('');
+  el.querySelectorAll('input[data-asean-grid-voltage]').forEach(cb => {
+    cb.addEventListener('change', e => {
+      const layer = voltageGroups.get(e.target.dataset.aseanGridVoltage).layer;
+      if (e.target.checked) map.addLayer(layer); else map.removeLayer(layer);
+    });
+  });
+}).catch(err => {
+  console.error('Failed to load ASEAN power grid:', err);
 });
 
 // ---------- Power plants (China & ASEAN) ----------
