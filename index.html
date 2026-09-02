@@ -104,6 +104,11 @@
       <div id="powerList"></div>
     </section>
 
+    <section>
+      <h2>Processing Plants</h2>
+      <div id="processingPlantList"></div>
+    </section>
+
     <section id="sources">
       <h2>Data Sources</h2>
       <p>Mining location data: ACMDP, ICMM</p>
@@ -114,6 +119,7 @@
       <p>China airports/seaports/dry ports: OpenStreetMap via Overpass API, military airports excluded</p>
       <p>China power grid: OpenStreetMap via Overpass API, 500kV+ backbone only</p>
       <p>ASEAN power grid: OpenStreetMap via Overpass API, 220kV+ backbone only</p>
+      <p>Processing plants: USGS INDOPAC/Southwest Asia GIS + company filings (user-supplied)</p>
     </section>
   </div>
   <div id="map"></div>
@@ -625,6 +631,51 @@ fetch('power_plants.json').then(r => r.json()).then(plants => {
   });
 }).catch(err => {
   console.error('Failed to load power plants:', err);
+});
+
+// ---------- Mineral processing plants ----------
+fetch('processing_plants.json').then(r => r.json()).then(plants => {
+  const countryLayers = new Map(); // country -> layer
+  const counts = {};
+
+  plants.forEach(p => {
+    const primary = p.commodities[0];
+    const color = COLORS[primary] || '#888';
+    const marker = L.marker([p.lat, p.lon], { icon: L.divIcon({
+      className: 'mine-icon',
+      html: `<span class="mine-badge" style="background:${color}">🏭</span>`,
+      iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10]
+    }) });
+    marker.bindPopup(`
+      <span class="commodity-tag" style="background:${color}">${p.commodities.join(', ') || 'Unspecified'}</span>
+      <b>${p.name}</b>
+      ${p.operator ? p.operator + '<br>' : ''}
+      ${p.country}<br>
+      Status: ${p.status || '—'}<br>
+      ${p.lat.toFixed(4)}, ${p.lon.toFixed(4)}
+    `);
+    if (!countryLayers.has(p.country)) countryLayers.set(p.country, L.layerGroup());
+    countryLayers.get(p.country).addLayer(marker);
+    counts[p.country] = (counts[p.country] || 0) + 1;
+  });
+
+  const sortedCountries = [...countryLayers.keys()].sort((a, b) => counts[b] - counts[a]);
+  const el = document.getElementById('processingPlantList');
+  el.innerHTML = sortedCountries.map(country => `
+    <label class="chip">
+      <input type="checkbox" data-plant-country="${country}">
+      <span class="swatch" style="background:#888"></span>
+      <span>${country} processing plants</span><span class="cnt">${counts[country]}</span>
+    </label>`).join('');
+
+  el.querySelectorAll('input[data-plant-country]').forEach(cb => {
+    cb.addEventListener('change', e => {
+      const layer = countryLayers.get(e.target.dataset.plantCountry);
+      if (e.target.checked) map.addLayer(layer); else map.removeLayer(layer);
+    });
+  });
+}).catch(err => {
+  console.error('Failed to load processing plants:', err);
 });
 </script>
 </body>
