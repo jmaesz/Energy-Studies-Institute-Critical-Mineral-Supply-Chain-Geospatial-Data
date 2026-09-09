@@ -644,8 +644,8 @@ fetch('processing_plants.json').then(r => r.json()).then(plants => {
     const color = COLORS[primary] || '#888';
     const marker = L.marker([p.lat, p.lon], { icon: L.divIcon({
       className: 'mine-icon',
-      html: `<span class="mine-badge" style="background:${color}">🏭</span>`,
-      iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10]
+      html: `<span class="mine-badge" style="background:${color};width:15px;height:15px;font-size:9px">🏭</span>`,
+      iconSize: [15, 15], iconAnchor: [7, 7], popupAnchor: [0, -7]
     }) });
     marker.bindPopup(`
       <span class="commodity-tag" style="background:${color}">${p.commodities.join(', ') || 'Unspecified'}</span>
