@@ -159,7 +159,7 @@ let markers = [];
 let state = { commodity: null, country: null, query: '' };
 
 Promise.all([fetch('points.json').then(r => r.json()), fetch('china_icmm_mines.json').then(r => r.json())]).then(([basePoints, chinaPoints]) => {
-  const points = basePoints.concat(chinaPoints);
+  const points = basePoints.concat(chinaPoints.filter(p => /mine/i.test(p.status || "")));
   const commodityCounts = {}, countryCounts = {};
   points.forEach(p => {
     const commodities = Array.isArray(p.commodities) ? [...new Set(p.commodities)] : [p.commodity || '(unspecified)'];
@@ -167,6 +167,7 @@ Promise.all([fetch('points.json').then(r => r.json()), fetch('china_icmm_mines.j
     commodities.forEach(c => commodityCounts[c] = (commodityCounts[c]||0)+1);
     countryCounts[co] = (countryCounts[co]||0)+1;
   });
+  commodityCounts.Alumina = commodityCounts.Alumina || 0;
   state.commodity = new Set(Object.keys(commodityCounts).filter(k => !DEFAULT_OFF.commodity.has(k)));
   state.country = new Set(Object.keys(countryCounts).filter(k => !DEFAULT_OFF.country.has(k)));
 
