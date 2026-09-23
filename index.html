@@ -111,7 +111,7 @@
 
     <section id="sources">
       <h2>Data Sources</h2>
-      <p>Mining location data: ACMDP, ICMM</p>
+      <p>Mining location data: ACMDP; ICMM Global Mining Dataset v1.5 (July 2026)</p>
       <p>Land transport data: ASEAN Land Transport Network Map</p>
       <p>Power plant data: WRI Global Power Plant Database</p>
       <p>China motorway data: HOTOSM export of OpenStreetMap</p>
@@ -158,12 +158,13 @@ const cluster = L.markerClusterGroup({ maxClusterRadius: 45 });
 let markers = [];
 let state = { commodity: null, country: null, query: '' };
 
-fetch('points.json').then(r => r.json()).then(points => {
+Promise.all([fetch('points.json').then(r => r.json()), fetch('china_icmm_mines.json').then(r => r.json())]).then(([basePoints, chinaPoints]) => {
+  const points = basePoints.concat(chinaPoints);
   const commodityCounts = {}, countryCounts = {};
   points.forEach(p => {
-    const c = p.commodity || '(unspecified)';
+    const commodities = Array.isArray(p.commodities) ? [...new Set(p.commodities)] : [p.commodity || '(unspecified)'];
     const co = p.country || '(unspecified)';
-    commodityCounts[c] = (commodityCounts[c]||0)+1;
+    commodities.forEach(c => commodityCounts[c] = (commodityCounts[c]||0)+1);
     countryCounts[co] = (countryCounts[co]||0)+1;
   });
   state.commodity = new Set(Object.keys(commodityCounts).filter(k => !DEFAULT_OFF.commodity.has(k)));
@@ -183,7 +184,8 @@ fetch('points.json').then(r => r.json()).then(points => {
   buildChips('countryList', countryCounts, 'country', false);
 
   markers = points.map(p => {
-    const commodity = p.commodity || '(unspecified)';
+    const commodities = Array.isArray(p.commodities) ? [...new Set(p.commodities)] : [p.commodity || '(unspecified)'];
+    const commodity = p.commodity || commodities[0];
     const country = p.country || '(unspecified)';
     const color = COLORS[p.commodity] || '#888';
     const icon = L.divIcon({
@@ -195,14 +197,14 @@ fetch('points.json').then(r => r.json()).then(points => {
     });
     const marker = L.marker([p.lat, p.lon], { icon });
     marker.bindPopup(`
-      <span class="commodity-tag" style="background:${color}">${commodity}</span>
+      <span class="commodity-tag" style="background:${color}">${commodities.join(', ')}</span>
       <b>${p.name || '(unnamed occurrence)'}</b>
       ${p.company ? p.company + '<br>' : ''}
       ${p.loc ? p.loc + ', ' : ''}${country}<br>
       Status: ${p.status || '—'}<br>
       ${p.lat.toFixed(4)}, ${p.lon.toFixed(4)}
     `);
-    marker._meta = { commodity, country, search: `${p.name} ${p.company} ${p.loc}`.toLowerCase() };
+    marker._meta = { commodities, country, search: `${p.name} ${p.company} ${p.loc}`.toLowerCase() };
     return marker;
   });
 
@@ -212,7 +214,7 @@ fetch('points.json').then(r => r.json()).then(points => {
     let shown = 0;
     const visible = markers.filter(m => {
       const meta = m._meta;
-      const ok = state.commodity.has(meta.commodity) && state.country.has(meta.country) &&
+      const ok = meta.commodities.some(c => state.commodity.has(c)) && state.country.has(meta.country) &&
         (!q || meta.search.includes(q));
       if (ok) shown++;
       return ok;
@@ -252,7 +254,7 @@ fetch('points.json').then(r => r.json()).then(points => {
     applyFilters();
   });
 }).catch(err => {
-  document.getElementById('statLine').textContent = 'Failed to load points.json: ' + err.message;
+  document.getElementById('statLine').textContent = 'Failed to load mining data: ' + err.message;
 });
 
 // ---------- Transport network ----------
